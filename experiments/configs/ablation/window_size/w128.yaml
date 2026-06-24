@@ -1,0 +1,31 @@
+name: w128
+description: Window-size ablation at 128 pixels.
+module: visual_prompt.evaluation.eval_sliding_window_semantic_mask
+output:
+  root: outputs/ablations/window-size
+  subdir: w128
+  arg: output_dir
+args:
+  data_root: D:/workspace/code/dataset/IRSTD-1k
+  device: cuda:0
+  score_layer: fused_all_layers
+  window_size: 128
+  overlap: 0.5
+  window_batch_size: 1
+  support_negative_scope: global
+  support_ids: XDU514,XDU646,XDU904,XDU660,XDU347
+  edge_method: sobel
+  edge_quantile: 0.90
+  edge_exclude_dilate: 9
+  bright_threshold_mode: target_mean
+  local_contrast_sigma: 7.0
+  target_rf_radius_scale: 1.0
+  target_rf_radius_min: 0
+  visualization_samples: 0
+  mask_score_mode: sim_times_contrast
+flags:
+  use_vector_correction: true
+  use_high_freq_negative: true
+  use_bright_negative: true
+  use_sliding_window: true
+  use_hard_negative: false

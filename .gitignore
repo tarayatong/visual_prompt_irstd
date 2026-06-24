@@ -1,0 +1,52 @@
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+
+# Local environments and editor state
+.env
+.venv/
+env/
+venv/
+.idea/
+.vscode/
+.codex/
+.agents/
+
+# Local datasets and split mirrors
+/dataset/
+
+# Model weights and downloaded assets
+/checkpoints/*
+!/checkpoints/.gitkeep
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+/downloads/
+
+# Generated experiment evidence
+/outputs/
+/logs/
+*.log
+
+# Local paper/test plotting code; numeric evaluation does not depend on it
+/visual_prompt/visualization/
+/tests/
+/test/
+/notebooks/
+*_smoke.py
+*_debug.py
+
+# Nonessential local notes; retain only the public reproduction guide
+/docs/*
+!/docs/reproduction_setup.md
+
+# Build/package artifacts
+build/
+dist/
+*.egg-info/
