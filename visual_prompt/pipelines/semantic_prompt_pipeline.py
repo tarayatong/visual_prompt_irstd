@@ -50,6 +50,10 @@ def resolve_sim_feature_layers(image_encoder, layer_names):
 
 
 def register_sim_feature_hooks(predictor, layer_names):
+    if getattr(predictor, "supports_external_sim_features", False):
+        if layer_names and layer_names.lower() != "all":
+            predictor.sim_feature_layers = [name.strip() for name in layer_names.split(",") if name.strip()]
+        return
     names = resolve_sim_feature_layers(predictor.model.image_encoder, layer_names)
     if not names:
         raise ValueError("At least one similarity feature layer is required.")
@@ -66,6 +70,13 @@ def register_sim_feature_hooks(predictor, layer_names):
 
 
 def get_named_sim_features(predictor, align=True):
+    if getattr(predictor, "supports_external_sim_features", False):
+        features = predictor.get_named_sim_features(align=align)
+        wanted = getattr(predictor, "sim_feature_layers", None)
+        if wanted:
+            feature_map = {name: feat for name, feat in features}
+            return [(name, feature_map[name]) for name in wanted if name in feature_map]
+        return features
     maps = getattr(predictor, "sim_feature_maps", None)
     layers = getattr(predictor, "sim_feature_layers", None)
     if not maps or not layers:
@@ -108,5 +119,6 @@ def compute_sim_from_features(predictor, target_feat, cur_feat_bchw, sim_size=25
     sim_raw = similarity.reshape(1, 1, height, width)
     if sim_size > 0 and sim_raw.shape[-2:] != (sim_size, sim_size):
         sim_raw = F.interpolate(sim_raw, size=(sim_size, sim_size), mode="bilinear", align_corners=False)
-    sim_post = predictor.model.postprocess_masks(sim_raw, predictor.input_size, predictor.original_size)
+    postprocess = predictor.postprocess_masks if hasattr(predictor, "postprocess_masks") else predictor.model.postprocess_masks
+    sim_post = postprocess(sim_raw, predictor.input_size, predictor.original_size)
     return sim_raw.squeeze(0), sim_post.squeeze()
