@@ -173,7 +173,9 @@ class PD_FAmeter:
                         break
 
             # self.dismatch_pixel += (predits - true_img).sum()
-            self.dismatch = [x for x in self.image_area_total if x not in self.image_area_match]
+            # Matched components have been removed above; keep unmatched identities,
+            # including components with the same area as a matched component.
+            self.dismatch = [region.area for region in coord_image]
             self.all_pixel += size[0] * size[1]
             self.FA += np.sum(self.dismatch)
             self.PD += len(self.distance_match)
