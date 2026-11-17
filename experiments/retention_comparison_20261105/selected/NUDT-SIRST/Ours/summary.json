@@ -1,0 +1,19 @@
+{
+  "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+  "images": 664,
+  "IoU_percent": 69.73852896455085,
+  "nIoU_percent": 72.3135039466569,
+  "F1_percent": 82.17171362326987,
+  "Pd_percent": 91.85185185185185,
+  "Fa_per_million": 120.09402355515813,
+  "pixel_FP_per_million": 120.09402355515813,
+  "FP_per_image": 0.4186746987951807,
+  "tp": 23391,
+  "fp": 5226,
+  "fn": 4924,
+  "pixels": 43515904,
+  "targets": 945,
+  "predictions": 1146,
+  "detected": 868,
+  "unmatched_pixels": 2802
+}

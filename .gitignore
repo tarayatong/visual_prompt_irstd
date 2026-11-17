@@ -28,23 +28,49 @@ venv/
 *.ckpt
 *.safetensors
 /downloads/
+*.zip
 
 # Generated experiment evidence
 /outputs/
+/output/
 /logs/
 *.log
 
+# Local literature sources and third-party reference checkouts
+/references/
+/research/paper_reading/
+
 # Local paper/test plotting code; numeric evaluation does not depend on it
 /visual_prompt/visualization/
-/tests/
 /test/
 /notebooks/
 *_smoke.py
 *_debug.py
 
-# Nonessential local notes; retain only the public reproduction guide
+# Documentation and source records for the paper
 /docs/*
 !/docs/reproduction_setup.md
+!/docs/tiny_memory_radial_ablation.md
+!/docs/core_ir_experiments.md
+!/docs/core_ir_followup_20261117.txt
+!/docs/comparison_three_datasets.md
+!/docs/ifa_mpa_50sample_execution.md
+!/docs/sam2_bplus_pipeline.md
+!/docs/comparison_retention.md
+!/docs/comparison_task_adaptation_results.md
+!/docs/comparison_recent_a_120_500.md
+!/docs/sam_train50_protocol_20261109.md
+/experiments/evidence/*
+!/experiments/evidence/core_ir_paper_index.json
+!/experiments/evidence/tiny_memory_radial_retained.csv
+!/experiments/evidence/comparison_three_datasets.json
+!/experiments/evidence/comparison_task_adaptation_20261104.json
+!/experiments/evidence/comparison_adaptation_table_overrides.json
+!/experiments/evidence/comparison_table_overrides.json
+!/experiments/evidence/ours_table_overrides.json
+/experiments/retention_comparison_20261105/*
+!/experiments/retention_comparison_20261105/selected_assets.json
+!/experiments/retention_comparison_20261105/selected/
 
 # Build/package artifacts
 build/

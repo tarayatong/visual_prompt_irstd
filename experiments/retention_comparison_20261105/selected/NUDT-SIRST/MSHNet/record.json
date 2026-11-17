@@ -1,0 +1,28 @@
+{
+  "dataset": "NUDT-SIRST",
+  "method": "MSHNet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 57.60682262916557,
+    "nIoU": 64.73322668604541,
+    "F1": 73.10194021829773,
+    "Pd": 87.61904761904762,
+    "Fa": 136.13413615399097
+  },
+  "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MSHNet/metrics/summary.json",
+  "review": "单次设置参考，正式比较待协议对齐",
+  "epochs": "1200",
+  "schedule_status": "convergence_plus100",
+  "category": "IRSTD",
+  "venue": "CVPR",
+  "year": 2024,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MSHNet",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MSHNet/checkpoints/latest.pt",
+  "expected_epoch": 1200,
+  "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MSHNet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

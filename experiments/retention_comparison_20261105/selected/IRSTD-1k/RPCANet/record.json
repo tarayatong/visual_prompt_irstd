@@ -1,0 +1,28 @@
+{
+  "dataset": "IRSTD-1k",
+  "method": "RPCANet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 43.41468491439871,
+    "nIoU": 41.31897523947888,
+    "F1": 60.54426705370101,
+    "Pd": 77.10437710437711,
+    "Fa": 88.63003099735697
+  },
+  "source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/RPCANet/metrics/summary.json",
+  "review": "训练日程待复核，不作已收敛比较",
+  "epochs": "500",
+  "schedule_status": "cap_without_confirmed_convergence",
+  "category": "IRSTD",
+  "venue": "WACV",
+  "year": 2024,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/IRSTD-1k/RPCANet",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/RPCANet/checkpoints/epoch_0500.pt",
+  "expected_epoch": 500,
+  "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/RPCANet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

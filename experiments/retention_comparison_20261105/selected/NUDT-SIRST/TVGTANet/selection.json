@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "epochs": 20,
+    "pool": "original",
+    "template": "original"
+  },
+  "validation": {
+    "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+    "images": 10,
+    "IoU_percent": 14.14496833216045,
+    "nIoU_percent": 20.3298077069182,
+    "F1_percent": 24.784217016029594,
+    "Pd_percent": 56.25,
+    "Fa_per_million": 1432.80029296875,
+    "pixel_FP_per_million": 1432.80029296875,
+    "FP_per_image": 1.7,
+    "tp": 201,
+    "fp": 939,
+    "fn": 281,
+    "pixels": 655360,
+    "targets": 16,
+    "predictions": 26,
+    "detected": 9,
+    "unmatched_pixels": 645
+  },
+  "official_test_labels_read": false,
+  "annotation_budget": 50,
+  "adaptation_support_images": 5,
+  "validation_images": 10,
+  "note": "allocated50 labels used to stratify split; budget50 validation-adapted, not a pure5-label reference"
+}

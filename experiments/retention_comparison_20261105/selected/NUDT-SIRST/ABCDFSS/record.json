@@ -1,0 +1,80 @@
+{
+  "dataset": "NUDT-SIRST",
+  "method": "ABCDFSS",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 9.364679204442478,
+    "nIoU": 21.051902477014053,
+    "F1": 17.125600829380165,
+    "Pd": 78.51851851851852,
+    "Fa": 4700.074712914156
+  },
+  "source": "outputs/comparison_task_adaptation_20261104/ABCDFSS/NUDT-SIRST/report.json",
+  "review": "单次设置参考，正式比较待协议对齐",
+  "epochs": "25q",
+  "schedule_status": "",
+  "category": "FSS",
+  "venue": "CVPR",
+  "year": 2024,
+  "origin": "task_adaptation_replacement",
+  "previous_result": {
+    "dataset": "NUDT-SIRST",
+    "method": "ABCDFSS",
+    "labels": 5,
+    "status": "verified",
+    "values": {
+      "IoU": 8.32425930366486,
+      "nIoU": 19.252431322818698,
+      "F1": 15.369150654110646,
+      "Pd": 66.98412698412699,
+      "Fa": 5195.204033909074
+    },
+    "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ABCDFSS/metrics/summary.json",
+    "review": "单次设置参考，正式比较待协议对齐",
+    "epochs": "",
+    "schedule_status": "",
+    "category": "FSS",
+    "venue": "CVPR",
+    "year": 2024,
+    "origin": "preserved_existing_result"
+  },
+  "adaptation_marker": "A1",
+  "adaptation_tags": [],
+  "support_shots": 5,
+  "adapted_version": "ABCDFSS",
+  "selection": {
+    "settings": {
+      "epochs": 25,
+      "pool": "original",
+      "template": "original"
+    },
+    "validation": {
+      "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+      "images": 10,
+      "IoU_percent": 13.615384615384615,
+      "nIoU_percent": 16.724394622185052,
+      "F1_percent": 23.967501692620175,
+      "Pd_percent": 56.25,
+      "Fa_per_million": 1248.1689453125,
+      "pixel_FP_per_million": 1248.1689453125,
+      "FP_per_image": 1.6,
+      "tp": 177,
+      "fp": 818,
+      "fn": 305,
+      "pixels": 655360,
+      "targets": 16,
+      "predictions": 25,
+      "detected": 9,
+      "unmatched_pixels": 439
+    }
+  },
+  "replacement_selection": "user_requested_posthoc_higher_test_IoU_display; five metrics from one configuration",
+  "table_adaptation_star": true,
+  "run_directory": "outputs/comparison_task_adaptation_20261104/ABCDFSS/NUDT-SIRST",
+  "checkpoint": null,
+  "expected_epoch": null,
+  "config": "outputs/comparison_task_adaptation_20261104/ABCDFSS/NUDT-SIRST/selection.json",
+  "metric_source_exists": true,
+  "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+}

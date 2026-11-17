@@ -1,0 +1,28 @@
+{
+  "dataset": "IRSTD-1k",
+  "method": "ABCDFSS",
+  "labels": 5,
+  "status": "verified",
+  "values": {
+    "IoU": 7.068178471506405,
+    "nIoU": 14.388698346896064,
+    "F1": 13.203135744739376,
+    "Pd": 37.03703703703704,
+    "Fa": 2430.474580223881
+  },
+  "source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ABCDFSS/metrics/summary.json",
+  "review": "单次设置参考，正式比较待协议对齐",
+  "epochs": "",
+  "schedule_status": "",
+  "category": "FSS",
+  "venue": "CVPR",
+  "year": 2024,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ABCDFSS",
+  "checkpoint": null,
+  "expected_epoch": 500,
+  "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ABCDFSS/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+}

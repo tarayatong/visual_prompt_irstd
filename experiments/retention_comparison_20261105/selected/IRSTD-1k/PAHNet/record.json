@@ -1,0 +1,32 @@
+{
+  "method": "PAHNet",
+  "dataset": "IRSTD-1k",
+  "category": "FSS",
+  "venue": "ICCV",
+  "year": 2025,
+  "labels": 50,
+  "epochs": 120,
+  "values": {
+    "IoU": 6.237791379085818,
+    "nIoU": 1.3985734321825016,
+    "F1": 11.74307428291248,
+    "Pd": 1.6835016835016836,
+    "Fa": 15.39163921602923
+  },
+  "status": "verified",
+  "origin": "new_method_epoch120",
+  "source": "outputs/comparison_recent_a_20261104/IRSTD-1k/PAHNet/epoch_0120/metrics/summary.json",
+  "metric_counts_verified": true,
+  "quality_review": null,
+  "training_horizon": 120,
+  "reused_existing_epoch120": false,
+  "variant": "PAHNet_HDM_Pascal_split0_train50",
+  "deviations": "author full Pascal split0 5shot source pretraining; target50 novel-class adaptation, not native source benchmark training; batch1 and257 input vs4 and473; all target pixels map to background for frozen Pascal base learner; original prototype predictor/fusion/native three loss terms retained; no test-based adaptation",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_recent_a_20261104/IRSTD-1k/PAHNet",
+  "checkpoint": "outputs/comparison_recent_a_20261104/IRSTD-1k/PAHNet/checkpoints/epoch_0120.pt",
+  "expected_epoch": 120,
+  "config": "outputs/comparison_recent_a_20261104/IRSTD-1k/PAHNet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

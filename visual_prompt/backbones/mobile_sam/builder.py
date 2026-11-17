@@ -10,9 +10,10 @@ from .modeling import MaskDecoder, PromptEncoder, Sam, TinyViT, TwoWayTransforme
 DEFAULT_CHECKPOINT = Path(__file__).resolve().parents[3] / "checkpoints" / "mobile_sam.pt"
 
 
-def build_mobile_sam(checkpoint: str | Path | None = DEFAULT_CHECKPOINT) -> Sam:
+def build_mobile_sam(checkpoint: str | Path | None = DEFAULT_CHECKPOINT, image_size: int = 512) -> Sam:
+    if image_size not in (512, 1024):
+        raise ValueError('MobileSAM input size must be 512 or 1024')
     prompt_embed_dim = 256
-    image_size = 1024
     image_embedding_size = image_size // 16
     model = Sam(
         image_encoder=TinyViT(

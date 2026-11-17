@@ -1,0 +1,11 @@
+{
+  "reason": "Native and balanced validation predictions remain degenerate; follow the planned optimizer and edge supervision diagnosis",
+  "candidates": [
+    "Adam1e-3/native/edge10",
+    "Adam1e-3/native/edge1",
+    "if needed Adam1e-3/balanced/edge1"
+  ],
+  "candidate_updates": 1000,
+  "selection": "val10 IoU, lowerFa, fewerupdates",
+  "test_used_for_new_selection": false
+}

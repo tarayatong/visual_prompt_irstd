@@ -1,0 +1,33 @@
+CoRe-IR 补充实验和附录审阅稿
+
+领域适配
+
+大表中的适配属于目标域小样本复现。IFA 在 IRSTD-1k 上同时改用面积池化构建支持原型、对支持和查询采用局部滑窗，并用 800 次目标域更新和 5 张部署支持。IoU 从 16.66% 升至 19.55%，Pd 从 23.23% 升至 87.54%，Fa 从 431.71 升至 501.64/百万。这个组合提高了小目标召回，IoU 的增益较小，误警略有增加。其中训练日程、尺度、池化和部署支持数均有变化，各因素的独立贡献还需要配对消融。
+
+ABCDFSS 在 SIRST 和 NUDT-SIRST 上、TVGTANet 在 NUDT-SIRST 上，保留原算法流程并用目标标签池复跑逐查询适配，IoU 分别为 14.65%、9.36% 和 20.73%。三组复跑都采用了与早期记录不同的目标标签预算或适配流程配置，现有结果支持报告复跑设置和绝对性能。对 FSS，目前有具体正向证据的是 IFA 的小目标保真与局部输入组合，其余方法仍需同预算对照。
+
+IRSTD 方法方面，HDNet、MSHNet+NS-FPN 和 RPCANet 在 NUDT-SIRST 上，把前景均衡 BCE 与 SoftIoU 合用，再按 40/10 的目标训练/验证划分选型，使用 50 张目标标签重新训练固定 1,000 次更新。早期运行的 IoU 分别约为 0.00%、0.06%、0.00%，复跑后分别为 61.61%、53.00%、17.37%。HDNet 与 MSHNet+NS-FPN 恢复了可用的分割质量。RPCANet 的 Pd 为 90.37%，Fa 仍高达 2,268.23/百万，说明高召回伴有明显过检。ISNet 在 IRSTD-1k 上使用 Adam 和减小权重的边缘 BCE，IoU 由约 0.03% 升至 5.06%，仍属于退化结果。现有证据支持在严重前景稀疏的目标域同时调整损失与训练预算，收益因模型和数据集而异。
+
+IRPruneDet、IRSAM、IR-SAM2、SAMamba 的星号标记 train50、120 轮的目标域复跑，包括初始化、输入尺寸和算子后端的复现选择。它们只有实际复跑结果，缺少适配前后的匹配对照。MPCNet 也采用了项目的固定小样本复跑协议，适配设置与评分见主表的复现说明。
+
+数字来源
+docs/comparison_three_datasets.md
+docs/comparison_task_adaptation_results.md
+experiments/evidence/comparison_table_history/20261105_before_task_adaptation/comparison_three_datasets.md
+outputs/comparison_task_adaptation_20261104/execution_protocol.json
+
+训练与推理的随机支持
+
+CoRe-IR 训练时，每个 query 从同域 train50 的其他图像中随机抽 1 张支持。已有 3 个训练种子 × 3 组随机五支持的配对设计，每组完整测试复用同一组支持，便于度量换支持造成的波动。先在同一权重下计算各支持组的 IoU 均值、标准差、范围，再计算训练种子间的波动。初步完整的 SIRST seed 111 与 seed 112，组内 IoU 范围分别为 1.34 和 0.29 个百分点，组均值分别为 78.40% 和 56.94%。同一数据集的两个种子已显示明显训练波动，附录结论待三域 27 组完整后核定。
+
+新增推理对照在每域选已有单级 RCR 的一份固定权重，比较原始固定 5 张支持与给每个测试 query 独立从 train50 无放回随机抽 5 张支持。逐查询抽样清单和原图逐图计数会保存，可以按同一 query 核算差值。固定和随机推理使用同一权重，可直接观察支持选择的影响。训练期随机抽支持的独立增益需要另外训练固定支持对照。
+
+执行协议
+
+一、主表沿用各方法的实际运行设置。参数量表覆盖现有复杂度表的 17 个方法，统一 IRSTD-1k 官方测试 201 张、原 train50、640×640 外部输入、120 轮、有效 batch 4、AdamW 1e-4 和余弦日程，所有方法重新训练。保留各自结构和任务损失，披露实际编码器内部尺寸、微批大小和精度。例如 CoRe-IR 与 SANSA 的 SAM2 实际编码尺寸均为 1024×1024。参数表记录总参数、可训练参数、同一设置的 IoU 与单图 CUDA GFLOPs；支持模型另外报告五支持构建成本。FLOP 统计覆盖 PyTorch 计数器支持的算子。四个代表方法 CoRe-IR、SANSA Tiny、ILNet、HDNet 再在 256×256 外部输入重训，得到配对分辨率对照。
+
+二、外部泛化固定 NUDT-SIRST 源权重，暂用 SANSA Tiny（FSS）和 ILNet（IRSTD）作为两条基线。各方法评估直接迁移与同五张目标标注、100 次更新的 5-shot；CoRe-IR 与 SANSA 加做只换目标支持、权重冻结的条件。按官方划分起步，剔除与主基准重名、像素相同及 dHash 近重复的图像，同时筛掉目标训练与测试之间的近重复，Sea 额外按文件名前两个场景字段隔离。数据预检后保留 NUDT-SIRST-Sea 813 张测试图（220 张含目标）、DenseSIRST 149 张（149 张含目标）、Open SIRST v2 149 张（18 张含目标）。DenseSIRST 与 Open SIRST v2 的测试 ID 完全重合，作为两套标注条件下的相关压力测试。具体图像和支持划分见 transfer 下的 protocol.json。
+
+三、模型能力上界采用同数据集全监督。CoRe-IR、SANSA Tiny、ILNet 分别使用 IRSTD-1k、SIRST、NUDT-SIRST 全部官方训练图像 800、341、663 张，测试集为 201、86、664 张。各方法使用自己的训练配方，在预定最终轮次按原图指标测试。CoRe-IR 用 SAM2 Tiny + CSM + RCR 的 640 外部尺寸、120 轮、batch 4、BF16 和 AdamW 1e-4。SANSA 使用已有红外复现的 SANSA Tiny 配方，640 外部尺寸、120 轮、batch 1、FP32、AdamW 1e-4 和原生 Focal + Dice。两个支持模型训练时随机抽各 episode 的支持，测试沿用主表同域固定五支持。ILNet-L 用作者全量设置，512 输入、600 轮、有效 batch 8、FP16 AMP、Adan 1e-3 和 10 轮预热的余弦调度，训练增强及深监督损失复用作者实现。微批大小由 GPU 预检择定，使用梯度累积时实际 BatchNorm 统计对应微批。NUDT-SIRST 的 ILNet 归一化统计从该域官方训练集计算。修订后的输出在 full_native，最初统一配方的检查点留在 full。
+
+四、Windows 一次性任务 CoRe-IR-Followup-20261117-0300 于 2026-11-17 03:00（北京时间）启动。任务使用当前已登录的 Windows 账号，启用唤醒。队列按单 GPU 串行执行，现有三种子任务如仍占用 GPU，等待其释放。每个新配置先跑最小训练/推理预检，单项失败写日志后继续其余实验。训练与验收文件在 outputs/core_ir_followup_20261117。

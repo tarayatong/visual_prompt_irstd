@@ -1,0 +1,30 @@
+{
+  "pool": "area",
+  "tiled": true,
+  "updates": 800,
+  "decay_updates": [
+    272,
+    536
+  ],
+  "validation": {
+    "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+    "images": 10,
+    "IoU_percent": 18.563432835820894,
+    "nIoU_percent": 21.341506881669268,
+    "F1_percent": 31.31392604248623,
+    "Pd_percent": 88.23529411764706,
+    "Fa_per_million": 517.6544189453125,
+    "pixel_FP_per_million": 517.6544189453125,
+    "FP_per_image": 1.9,
+    "tp": 398,
+    "fp": 1357,
+    "fn": 389,
+    "pixels": 2621440,
+    "targets": 17,
+    "predictions": 34,
+    "detected": 15,
+    "unmatched_pixels": 533
+  },
+  "official_test_labels_read": false,
+  "version": "IR-adapted/budget-adapted; no native result overwritten"
+}

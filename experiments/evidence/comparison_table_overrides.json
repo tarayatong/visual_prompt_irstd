@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-04",
+  "primary_metric": "global pixel IoU",
+  "selection_scope": "dataset-method blocks, based on pre-replacement historical test results",
+  "mixed_training_schedules": true,
+  "not_uniform_budget_comparison": true,
+  "history": "experiments/evidence/comparison_table_history/20261104_before_epoch125",
+  "overrides": [
+    {
+      "dataset": "NUDT-SIRST",
+      "method": "SCTransNet",
+      "epochs": 125,
+      "source": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/summary.json",
+      "per_image": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/per_image.csv",
+      "audit": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/independent_audit.json",
+      "provenance": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/provenance.json",
+      "per_image_sha256": "e36a80204a40bff2d4452389deed02c83253ad566373e32ee92385de9968499b",
+      "previous_result": {
+        "dataset": "NUDT-SIRST",
+        "method": "SCTransNet",
+        "labels": 50,
+        "status": "verified",
+        "values": {
+          "IoU": 69.63668887244017,
+          "nIoU": 70.24345416437336,
+          "F1": 82.10097631038307,
+          "Pd": 91.32275132275132,
+          "Fa": 94.42524737622364
+        },
+        "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet/metrics/summary.json",
+        "review": "训练日程待复核，不作已收敛比较",
+        "epochs": "500",
+        "schedule_status": "cap_without_confirmed_convergence"
+      },
+      "selection_reference_ours_IoU": 62.91692273311358,
+      "selection_rule": "User requested epoch125 for methods whose pre-replacement full-training IoU exceeded the current table Ours",
+      "test_based_display_selection": true
+    },
+    {
+      "dataset": "NUDT-SIRST",
+      "method": "ILNet",
+      "epochs": 125,
+      "source": "outputs/nudt_split_sampler_500_20261102/ILNet_epoch125/metrics/summary.json",
+      "per_image": "outputs/nudt_split_sampler_500_20261102/ILNet_epoch125/metrics/per_image.csv",
+      "audit": "outputs/nudt_split_sampler_500_20261102/ILNet_epoch125/metrics/independent_audit.json",
+      "provenance": "outputs/nudt_split_sampler_500_20261102/ILNet_epoch125/provenance.json",
+      "per_image_sha256": "30c1e5e93fdef99ac52568e04b12a4fe1cc7531e80804da7004bd14f1f84a89f",
+      "previous_result": {
+        "dataset": "NUDT-SIRST",
+        "method": "ILNet",
+        "labels": 50,
+        "status": "verified",
+        "values": {
+          "IoU": 75.98331729226821,
+          "nIoU": 75.87703731447783,
+          "F1": 86.35286396616473,
+          "Pd": 94.70899470899471,
+          "Fa": 65.60819694794804
+        },
+        "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ILNet/metrics/summary.json",
+        "review": "训练日程待复核，不作已收敛比较",
+        "epochs": "500",
+        "schedule_status": "cap_without_confirmed_convergence"
+      },
+      "selection_reference_ours_IoU": 62.91692273311358,
+      "selection_rule": "User requested epoch125 for methods whose pre-replacement full-training IoU exceeded the current table Ours",
+      "test_based_display_selection": true
+    }
+  ]
+}

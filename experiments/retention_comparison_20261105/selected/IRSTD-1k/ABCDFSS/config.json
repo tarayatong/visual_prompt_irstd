@@ -1,0 +1,13 @@
+{
+  "method": "ABCDFSS",
+  "source_commit": "9d00f68199d0fad0d991efaf3f6b695c8706fe1f",
+  "input_size": 400,
+  "support_shots": 5,
+  "actual_annotation_budget": 5,
+  "allocated_annotation_budget": 50,
+  "adaptation": "native every-episode,25epochs; fixed support and unlabeled individual query",
+  "query_labels_for_adaptation": false,
+  "postprocessing": "native default off",
+  "rng_policy": "native augmentation seeded2; independent query head RNG index+2",
+  "manifest_sha256": "0779913d812c8b0a132f898191f2bf7362af80173fe34eba5234aeb0af15ecdc"
+}

@@ -1,0 +1,25 @@
+{
+  "commit": "e0276283794e9a54db334c2105f6e70107312202",
+  "epochs": 500,
+  "train_images": 50,
+  "initialization": "random",
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "batch_size": 4,
+  "input_size": 256,
+  "scheduler": "CosineAnnealingLR(T_max=500, eta_min=1e-5); horizon is declared safety cap",
+  "warm_epoch": 5,
+  "method": "SCTransNet",
+  "adaptive_schedule": true,
+  "normalization": {
+    "mean": 102.02503509521485,
+    "std": 58.657122758510724,
+    "source": "fixed train50 only"
+  },
+  "test_resize": "256x256 before original-resolution evaluation",
+  "selection": "final fixed epoch; never evaluate test during training",
+  "manifest_sha256": "8aa214bcfaf15ee46cdd13591c6ae8dfab144b8a4cde92198599e8dce7730dba",
+  "actual_final_epoch": 500,
+  "convergence_epoch": null,
+  "epoch_argument_is": "safety cap"
+}

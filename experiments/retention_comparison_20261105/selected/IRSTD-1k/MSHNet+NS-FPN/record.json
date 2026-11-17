@@ -1,0 +1,28 @@
+{
+  "dataset": "IRSTD-1k",
+  "method": "MSHNet+NS-FPN",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 53.1659440659393,
+    "nIoU": 51.209310838994384,
+    "F1": 69.42267015055369,
+    "Pd": 80.8080808080808,
+    "Fa": 122.26009843361318
+  },
+  "source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet+NS-FPN/metrics/summary.json",
+  "review": "训练日程待复核，不作已收敛比较",
+  "epochs": "500",
+  "schedule_status": "cap_without_confirmed_convergence",
+  "category": "IRSTD",
+  "venue": "CVPR",
+  "year": 2026,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet+NS-FPN",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet+NS-FPN/checkpoints/epoch_0500.pt",
+  "expected_epoch": 500,
+  "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet+NS-FPN/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

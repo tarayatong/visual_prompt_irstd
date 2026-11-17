@@ -1,0 +1,67 @@
+{
+  "NUDT-SIRST": {
+    "source": "outputs/best_observed_three_domains_20261102/NUDT-SIRST/summary.json",
+    "per_image": "outputs/best_observed_three_domains_20261102/NUDT-SIRST/per_image.csv",
+    "audit": "outputs/best_observed_three_domains_20261102/NUDT-SIRST/audit.json",
+    "configuration": "instance_semantic_memory_aligned_Obj_M1_Mask_K6_posthoc_replay",
+    "description": "实例语义记忆＋适配Obj＋M1 Mask；K6，测试后固定权重预算回放",
+    "source_report": "docs/nudt_memory_k5_to10.md",
+    "previous_source": "outputs/nudt_recall_rejection_20261101/full50_M1_K60/metrics/summary.json",
+    "previous_values": {
+      "IoU": 55.356197989321274,
+      "nIoU": 60.96771055779322,
+      "F1": 71.26358485308234,
+      "Pd": 93.96825396825396,
+      "Fa": 304.7851194818336
+    },
+    "user_selected": true,
+    "selection_mode": "user_requested_best_observed_IoU",
+    "selection_scope": "retrospective_dataset_specific_completed_official_test_results_not_uniform_recipe",
+    "test_selection": true,
+    "metric": "original_resolution_GT_gt0"
+  },
+  "SIRST": {
+    "source": "outputs/best_observed_three_domains_20261102/SIRST/summary.json",
+    "per_image": "outputs/best_observed_three_domains_20261102/SIRST/per_image.csv",
+    "audit": "outputs/best_observed_three_domains_20261102/SIRST/audit.json",
+    "configuration": "Top5_fixed_Obj_Mask_plus_64_learned_radial_gains_epoch10",
+    "description": "Top5；61.08同域基线＋64通道径向gain，固定额外训练10轮",
+    "source_report": "docs/radial_experiments.md",
+    "previous_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/Ours/metrics/summary.json",
+    "previous_values": {
+      "IoU": 64.46424152437515,
+      "nIoU": 70.8004001535507,
+      "F1": 78.39301835690641,
+      "Pd": 93.57798165137615,
+      "Fa": 113.82652700760471
+    },
+    "user_selected": true,
+    "selection_mode": "user_requested_best_observed_IoU",
+    "selection_scope": "retrospective_dataset_specific_completed_official_test_results_not_uniform_recipe",
+    "test_selection": true,
+    "metric": "original_resolution_GT_gt0",
+    "retained_checkpoint": "outputs/retained/radial_sirst/best.pt"
+  },
+  "IRSTD-1k": {
+    "source": "outputs/best_observed_three_domains_20261102/IRSTD-1k/summary.json",
+    "per_image": "outputs/best_observed_three_domains_20261102/IRSTD-1k/per_image.csv",
+    "audit": "outputs/best_observed_three_domains_20261102/IRSTD-1k/audit.json",
+    "configuration": "Top5_SAM352_radial64_to8_free_projection_epoch5",
+    "description": "Top5；SAM352＋自由径向64→8投影及Mask微调，第5轮（原预设次配置）",
+    "source_report": "docs/radial_experiments.md",
+    "previous_source": "outputs/final6108_target_domains_20261101/IRSTD-1k/metrics/summary.json",
+    "previous_values": {
+      "IoU": 61.124536813275334,
+      "nIoU": 59.58723505451985,
+      "F1": 75.87241275872412,
+      "Pd": 91.24579124579125,
+      "Fa": 77.31878935401119
+    },
+    "user_selected": true,
+    "selection_mode": "user_requested_best_observed_IoU",
+    "selection_scope": "retrospective_dataset_specific_completed_official_test_results_not_uniform_recipe",
+    "test_selection": true,
+    "metric": "original_resolution_GT_gt0",
+    "retained_checkpoint": "outputs/retained/radial_irstd/best.pt"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "method": "SAM-SPL",
+  "dataset": "IRSTD-1k",
+  "category": "IRSTD",
+  "venue": "IEEE TGRS",
+  "year": 2025,
+  "labels": 50,
+  "epochs": 120,
+  "values": {
+    "IoU": 30.82441561547199,
+    "nIoU": 33.014529259590525,
+    "F1": 47.12333775076544,
+    "Pd": 59.93265993265993,
+    "Fa": 41.37333352767413
+  },
+  "status": "verified",
+  "origin": "new_method_epoch120",
+  "source": "outputs/comparison_recent_a_20261104/IRSTD-1k/SAM-SPL/epoch_0120/metrics/summary.json",
+  "metric_counts_verified": true,
+  "quality_review": null,
+  "training_horizon": 120,
+  "reused_existing_epoch120": false,
+  "variant": "SAM-SPL official spl_t (SAM2.1 tiny truncated stages) train50",
+  "deviations": "fixed train50, seed111, batch2/4, resize256 with flips/transpose rather than native crop/copy-paste; all50 every epoch; fixed120 horizon; no validation/test model selection",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_recent_a_20261104/IRSTD-1k/SAM-SPL",
+  "checkpoint": "outputs/comparison_recent_a_20261104/IRSTD-1k/SAM-SPL/checkpoints/epoch_0120.pt",
+  "expected_epoch": 120,
+  "config": "outputs/comparison_recent_a_20261104/IRSTD-1k/SAM-SPL/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

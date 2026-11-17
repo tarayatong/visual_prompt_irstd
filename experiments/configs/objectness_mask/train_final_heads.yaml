@@ -1,0 +1,30 @@
+name: train_final_heads
+description: Train final objectness and A2 mask heads on all 50 labeled trainval images.
+module: scripts.train_final_objectness_mask_heads
+output:
+  root: outputs/studies/objectness_mask
+  subdir: final_heads_50shot
+  arg: output_dir
+args:
+  baseline_config: experiments/configs/sam2/main.yaml
+  phase_b_dir: outputs/studies/objectness_mask/phase_b_mask_head
+  phase_c_dir: outputs/studies/objectness_mask/phase_c_objectness
+  phase_c_refine_dir: outputs/studies/objectness_mask/phase_c_objectness_refine
+  phase_e_dir: outputs/studies/objectness_mask/phase_e_mask_augment
+  sample_ids: XDU514,XDU646,XDU904,XDU660,XDU347,XDU487,XDU677,XDU136,XDU766,XDU491,XDU506,XDU247,XDU740,XDU664,XDU113,XDU958,XDU174,XDU272,XDU68,XDU846,XDU928,XDU44,XDU391,XDU387,XDU622,XDU461,XDU940,XDU873,XDU55,XDU619,XDU1000,XDU689,XDU433,XDU756,XDU11,XDU610,XDU292,XDU534,XDU827,XDU59,XDU875,XDU411,XDU327,XDU679,XDU340,XDU629,XDU712,XDU841,XDU874,XDU612
+  support_ids: XDU514,XDU646,XDU904,XDU660,XDU347
+  seed: 111
+  object_hidden: 128
+  object_epochs: 100
+  object_batch_size: 32
+  object_learning_rate: 0.001
+  object_weight_decay: 0.0001
+  mask_feature_size: 64
+  mask_hidden: 128
+  mask_epochs: 120
+  mask_batch_size: 8
+  mask_samples_per_epoch: 128
+  mask_learning_rate: 0.001
+  mask_weight_decay: 0.0001
+  mask_residual_scale: 0.25
+  mask_temperature: 0.1

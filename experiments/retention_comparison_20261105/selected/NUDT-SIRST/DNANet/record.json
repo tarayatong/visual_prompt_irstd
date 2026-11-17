@@ -1,0 +1,28 @@
+{
+  "dataset": "NUDT-SIRST",
+  "method": "DNANet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 62.20114541983576,
+    "nIoU": 65.8556518539556,
+    "F1": 76.69630847406964,
+    "Pd": 88.25396825396825,
+    "Fa": 107.684767389872
+  },
+  "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/DNANet/metrics/summary.json",
+  "review": "训练日程待复核，不作已收敛比较",
+  "epochs": "500",
+  "schedule_status": "cap_before_post_convergence100",
+  "category": "IRSTD",
+  "venue": "IEEE TIP",
+  "year": 2023,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/DNANet",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/DNANet/checkpoints/epoch_0500.pt",
+  "expected_epoch": 500,
+  "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/DNANet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

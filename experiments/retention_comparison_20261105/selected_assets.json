@@ -1,0 +1,1117 @@
+[
+  {
+    "method": "ABCDFSS",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 14.652031981832804,
+      "nIoU": 19.14353800681626,
+      "F1": 25.55913179829991,
+      "Pd": 69.72477064220183,
+      "Fa": 3031.335231238504
+    },
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "config": "outputs/comparison_task_adaptation_20261104/ABCDFSS/SIRST/selection.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ABCDFSS",
+    "source_commit": "9d00f68199d0fad0d991efaf3f6b695c8706fe1f",
+    "runners": {
+      "scripts/run_fss_task_adaptation.py": "3f7e04aab9fb3cf91cbd52500e4599135dacf31796dab0378320cc99bb75df07"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/ABCDFSS/SIRST/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+  },
+  {
+    "method": "ABCDFSS",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 7.068178471506405,
+      "nIoU": 14.388698346896064,
+      "F1": 13.203135744739376,
+      "Pd": 37.03703703703704,
+      "Fa": 2430.474580223881
+    },
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ABCDFSS/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ABCDFSS",
+    "source_commit": "9d00f68199d0fad0d991efaf3f6b695c8706fe1f",
+    "runners": {
+      "scripts/run_comparison_abcdfss.py": "174bbae1f862123f6357407363263c9775c47985c4deadb27f9a8a1fa7c70fe0"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ABCDFSS/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+  },
+  {
+    "method": "ABCDFSS",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 9.364679204442478,
+      "nIoU": 21.051902477014053,
+      "F1": 17.125600829380165,
+      "Pd": 78.51851851851852,
+      "Fa": 4700.074712914156
+    },
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "config": "outputs/comparison_task_adaptation_20261104/ABCDFSS/NUDT-SIRST/selection.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ABCDFSS",
+    "source_commit": "9d00f68199d0fad0d991efaf3f6b695c8706fe1f",
+    "runners": {
+      "scripts/run_fss_task_adaptation.py": "3f7e04aab9fb3cf91cbd52500e4599135dacf31796dab0378320cc99bb75df07"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/ABCDFSS/NUDT-SIRST/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+  },
+  {
+    "method": "IFA",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 37.68140686358204,
+      "nIoU": 38.112838647215185,
+      "F1": 54.73710317460318,
+      "Pd": 86.23853211009174,
+      "Fa": 423.73503232366187
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/fss50_v2/SIRST/IFA/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "0b4d88b220ec65e55e7c6a7a7a95bf427a782e03baa8ad38846f696023e0966d",
+    "config": "outputs/comparison_50shot_5support/fss50_v2/SIRST/IFA/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/IFA",
+    "source_commit": "4d5cbe65e7ec2376a8cfa79780c772cc8d73c9b0",
+    "runners": {
+      "scripts/run_fss50.py": "c492aec900dc04647d78cdfaf85b2184646597d80c4c6d136e36a409e845cb80",
+      "scripts/run_comparison_ifa.py": "8c534d0a62568a2666677776f571493245af642dd08724c04916ec3a5d54508d"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/IFA_50label/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "IFA",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 19.546597037507016,
+      "nIoU": 23.317999323580867,
+      "F1": 32.70121864091939,
+      "Pd": 87.54208754208754,
+      "Fa": 501.64217972636817
+    },
+    "checkpoint": "outputs/comparison_task_adaptation_20261104/IFA/IRSTD-1k/full50/model.pt",
+    "checkpoint_sha256": "20d1baa7469d4d7846ca28baac21b2070b1c781babe04bcdae03289562107dfe",
+    "config": "outputs/comparison_task_adaptation_20261104/IFA/IRSTD-1k/full50/training_config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/IFA",
+    "source_commit": "4d5cbe65e7ec2376a8cfa79780c772cc8d73c9b0",
+    "runners": {
+      "scripts/run_fss_task_adaptation.py": "3f7e04aab9fb3cf91cbd52500e4599135dacf31796dab0378320cc99bb75df07"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/IFA/IRSTD-1k/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "IFA",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 29.19725155019273,
+      "nIoU": 26.8729999206553,
+      "F1": 45.19794531209464,
+      "Pd": 75.34391534391534,
+      "Fa": 720.541161226939
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/fss50_v2/NUDT-SIRST/IFA/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "7573f4e79039885dff6cf5bbccfa4f8a9c201afb48251c2b430f2793a8e1e385",
+    "config": "outputs/comparison_50shot_5support/fss50_v2/NUDT-SIRST/IFA/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/IFA",
+    "source_commit": "4d5cbe65e7ec2376a8cfa79780c772cc8d73c9b0",
+    "runners": {
+      "scripts/run_fss50.py": "c492aec900dc04647d78cdfaf85b2184646597d80c4c6d136e36a409e845cb80",
+      "scripts/run_comparison_ifa.py": "8c534d0a62568a2666677776f571493245af642dd08724c04916ec3a5d54508d"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/fss50_v2/NUDT-SIRST/IFA/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "TVGTANet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 21.868999359931728,
+      "nIoU": 25.433942362907313,
+      "F1": 35.88935574229692,
+      "Pd": 77.06422018348624,
+      "Fa": 1823.7842490708717
+    },
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/TVGTANet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/TVGTANet",
+    "source_commit": "7f45050d02e2dd28b7ec9a49b6d28d897720b4d5",
+    "runners": {
+      "scripts/run_comparison_abcdfss.py": "174bbae1f862123f6357407363263c9775c47985c4deadb27f9a8a1fa7c70fe0"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/TVGTANet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+  },
+  {
+    "method": "TVGTANet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 11.621816195819473,
+      "nIoU": 15.065001833087393,
+      "F1": 20.823556885028967,
+      "Pd": 36.02693602693603,
+      "Fa": 1252.9097979341573
+    },
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/TVGTANet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/TVGTANet",
+    "source_commit": "7f45050d02e2dd28b7ec9a49b6d28d897720b4d5",
+    "runners": {
+      "scripts/run_comparison_abcdfss.py": "174bbae1f862123f6357407363263c9775c47985c4deadb27f9a8a1fa7c70fe0"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/TVGTANet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+  },
+  {
+    "method": "TVGTANet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 20.73028883260319,
+      "nIoU": 23.743824140539154,
+      "F1": 34.341488011093006,
+      "Pd": 78.3068783068783,
+      "Fa": 1463.2811029273344
+    },
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "config": "outputs/comparison_task_adaptation_20261104/TVGTANet/NUDT-SIRST/selection.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/TVGTANet",
+    "source_commit": "7f45050d02e2dd28b7ec9a49b6d28d897720b4d5",
+    "runners": {
+      "scripts/run_fss_task_adaptation.py": "3f7e04aab9fb3cf91cbd52500e4599135dacf31796dab0378320cc99bb75df07"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/TVGTANet/NUDT-SIRST/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+  },
+  {
+    "method": "SANSA",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 62.08289054197662,
+      "nIoU": 76.12955570089387,
+      "F1": 76.60634670862838,
+      "Pd": 99.08256880733946,
+      "Fa": 227.1410906253701
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/SIRST/SANSA/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "b806178ce11dd57b7d9e635207d02a367e2bc833b0b718ed846d28d843fad724",
+    "config": "outputs/comparison_recent_a_20261104/SIRST/SANSA/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/SANSA",
+    "source_commit": "f562b5642940e08a57e3da2608b804b99af3763b",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/SIRST/SANSA/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SANSA",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 62.47629991381787,
+      "nIoU": 61.78729137794943,
+      "F1": 76.90512394356236,
+      "Pd": 92.25589225589225,
+      "Fa": 54.24081982664801
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/IRSTD-1k/SANSA/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "89b226db237d36d53dc2ede04cdedeb5b7da009bc0c792f1a664991663ac590b",
+    "config": "outputs/comparison_recent_a_20261104/IRSTD-1k/SANSA/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/SANSA",
+    "source_commit": "f562b5642940e08a57e3da2608b804b99af3763b",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/IRSTD-1k/SANSA/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SANSA",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 65.95513075799815,
+      "nIoU": 74.40023316037508,
+      "F1": 79.48549762426609,
+      "Pd": 98.2010582010582,
+      "Fa": 214.8639724915286
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/NUDT-SIRST/SANSA/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "2a9430ce6998b4ca7abb00883f57e7d649aa1848204d27c63b4916649c7f4899",
+    "config": "outputs/comparison_recent_a_20261104/NUDT-SIRST/SANSA/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/SANSA",
+    "source_commit": "f562b5642940e08a57e3da2608b804b99af3763b",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/NUDT-SIRST/SANSA/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "PAHNet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 10.306334371754932,
+      "nIoU": 7.75422619698716,
+      "F1": 18.68674982348788,
+      "Pd": 24.770642201834864,
+      "Fa": 81.57283344772871
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/SIRST/PAHNet/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "adca37d2b5ce8e380590fcbda6a5ae60a98be710c129ffda4ac454ae67fbbc7b",
+    "config": "outputs/comparison_recent_a_20261104/SIRST/PAHNet/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/PAHNet",
+    "source_commit": "b38d57280d77efef37b56a0a01b7e5c67f345970",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/SIRST/PAHNet/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "PAHNet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 6.237791379085818,
+      "nIoU": 1.3985734321825016,
+      "F1": 11.74307428291248,
+      "Pd": 1.6835016835016836,
+      "Fa": 15.39163921602923
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/IRSTD-1k/PAHNet/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "1f1d47f8afd8c9b6e8948e77236a1160df530c58d657f069ffee7d32e508d4af",
+    "config": "outputs/comparison_recent_a_20261104/IRSTD-1k/PAHNet/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/PAHNet",
+    "source_commit": "b38d57280d77efef37b56a0a01b7e5c67f345970",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/IRSTD-1k/PAHNet/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "PAHNet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 17.717516546531257,
+      "nIoU": 11.790580841440168,
+      "F1": 30.10175047233161,
+      "Pd": 28.14814814814815,
+      "Fa": 206.91285650414156
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/NUDT-SIRST/PAHNet/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "ee104ec9c6a1efbb44515ddb9fc47af4440b4a9b323ed8368afbd219983735ab",
+    "config": "outputs/comparison_recent_a_20261104/NUDT-SIRST/PAHNet/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/PAHNet",
+    "source_commit": "b38d57280d77efef37b56a0a01b7e5c67f345970",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/NUDT-SIRST/PAHNet/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MPA",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 26.67288170706443,
+      "nIoU": 28.17073783086804,
+      "F1": 42.11301005805871,
+      "Pd": 85.3211009174312,
+      "Fa": 1071.710029396938
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/MPA/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "4fb8d5f8d675f7db4e25a0b8ed0b7f7a212a1ea989d5c8018f95290052acb2cb",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/MPA/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/MPA",
+    "source_commit": "21395a20540449a58c8d6501774740def50d70d7",
+    "runners": {
+      "scripts/run_comparison_mpa.py": "3aefb06a5fe82d9208c4fb2fcae681155aaa05b8a30061605040658c6eb7f3ab",
+      "scripts/comparison_mpa_adapter.py": "79ae5848de704ec6991460f5baa9cb762eba16ebce826d048a26ee4638bebcce"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/MPA/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MPA",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 1.51617017800705,
+      "nIoU": 4.36729442540903,
+      "F1": 2.987051570894506,
+      "Pd": 34.343434343434346,
+      "Fa": 11805.766850561646
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MPA/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "8fa3158173766c6e0a5bcc2884fad78bdcb04b4513567c70595c15975d7a6889",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MPA/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/MPA",
+    "source_commit": "21395a20540449a58c8d6501774740def50d70d7",
+    "runners": {
+      "scripts/run_comparison_mpa.py": "3aefb06a5fe82d9208c4fb2fcae681155aaa05b8a30061605040658c6eb7f3ab",
+      "scripts/comparison_mpa_adapter.py": "79ae5848de704ec6991460f5baa9cb762eba16ebce826d048a26ee4638bebcce"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MPA/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MPA",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 24.78664639744728,
+      "nIoU": 23.442855220746477,
+      "F1": 39.72644046944166,
+      "Pd": 77.35449735449735,
+      "Fa": 876.0934852692018
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MPA/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "b7e1ac185c3afede5ebd2d6ee2b405ffaf84cabe32dfff73d796d6535f0df024",
+    "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MPA/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/MPA",
+    "source_commit": "21395a20540449a58c8d6501774740def50d70d7",
+    "runners": {
+      "scripts/run_comparison_mpa.py": "3aefb06a5fe82d9208c4fb2fcae681155aaa05b8a30061605040658c6eb7f3ab",
+      "scripts/comparison_mpa_adapter.py": "79ae5848de704ec6991460f5baa9cb762eba16ebce826d048a26ee4638bebcce"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MPA/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "HERA",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 3.6418934726663026,
+      "nIoU": 4.514972926662939,
+      "F1": 7.027840481565087,
+      "Pd": 56.88073394495413,
+      "Fa": 14742.327119349247
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/SIRST/HERA/checkpoints/support_adaptation.pt",
+    "checkpoint_sha256": "39dcfbc773757f141c7a1592ccd6eea27eed6522b9ed65fefb353cd1917a6631",
+    "config": "outputs/comparison_50shot_5support/SIRST/HERA/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/HERA",
+    "source_commit": "038c9a1fdcef41b21ea8fc8a49341caf0a165bf1",
+    "runners": {
+      "scripts/run_comparison_hera.py": "55c300bc3dc3717201daaae3967ee5330c9ff840d5316aa79cbf5f9c24da55bf"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/SIRST/HERA/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "support_adaptation_plus_frozen_backbone"
+  },
+  {
+    "method": "HERA",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 1.6569576507535273,
+      "nIoU": 5.764951256351681,
+      "F1": 3.259900136783693,
+      "Pd": 26.666666666666668,
+      "Fa": 19676.897899214044
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/NUDT-SIRST/HERA/checkpoints/support_adaptation.pt",
+    "checkpoint_sha256": "e688682433cae6e32ac1825ae83579ed0b5a265bf023918bc98fd29ddc4171d4",
+    "config": "outputs/comparison_50shot_5support/NUDT-SIRST/HERA/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/HERA",
+    "source_commit": "038c9a1fdcef41b21ea8fc8a49341caf0a165bf1",
+    "runners": {
+      "scripts/run_comparison_hera.py": "55c300bc3dc3717201daaae3967ee5330c9ff840d5316aa79cbf5f9c24da55bf"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/NUDT-SIRST/HERA/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "support_adaptation_plus_frozen_backbone"
+  },
+  {
+    "method": "ISNet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 56.65750196386489,
+      "nIoU": 66.12778032282358,
+      "F1": 72.33295725209979,
+      "Pd": 98.1651376146789,
+      "Fa": 293.18436791464
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/ISNet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "cbab4aafcdd4783227002279c501f45284c25b8353a11600cdc8530baa75e331",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/ISNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ISNet",
+    "source_commit": "c5a7548a9abca04208fdf7bd5a5ee97e33cc056d",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/ISNet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "ISNet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 5.059310640677485,
+      "nIoU": 6.655690705302142,
+      "F1": 9.631341781750836,
+      "Pd": 76.76767676767676,
+      "Fa": 4678.906492925995
+    },
+    "checkpoint": "outputs/comparison_task_adaptation_20261104/followups/ISNet/IRSTD-1k/full50/model.pt",
+    "checkpoint_sha256": "5bd9a650cc728877ef2128ae3ce2c50e1973b0cb51989f079988e2384b0b5114",
+    "config": "outputs/comparison_task_adaptation_20261104/followups/ISNet/IRSTD-1k/full50/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ISNet",
+    "source_commit": "c5a7548a9abca04208fdf7bd5a5ee97e33cc056d",
+    "runners": {
+      "scripts/run_comparison_task_adaptation.py": "5dc952f619bf0f134f5b1ff861c73e0eaf608fed70a6ae488868c2a8ba13d975",
+      "scripts/run_comparison_recovery_exploration.py": "e09d73931803b6b9b6bbfe858db7c0333bd044bad69cbd8fd2ad1df6d381d202"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/followups/ISNet/IRSTD-1k/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "ISNet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 36.524743480915575,
+      "nIoU": 42.19182202329533,
+      "F1": 53.50640850831743,
+      "Pd": 93.54497354497354,
+      "Fa": 892.4093591161521
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ISNet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "16f2ae7042697e748293f7340be56d05d0045ddbbcd139b069a3f7f91be05364",
+    "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ISNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ISNet",
+    "source_commit": "c5a7548a9abca04208fdf7bd5a5ee97e33cc056d",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ISNet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "DNANet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 57.35327963176064,
+      "nIoU": 70.40173608986649,
+      "F1": 72.89746965043147,
+      "Pd": 94.4954128440367,
+      "Fa": 165.7054838446539
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/DNANet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "e11c775014d8bf2774a0548749bcd76d604c75cc16ecb30d7b2e5a45a819969f",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/DNANet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/DNANet",
+    "source_commit": "21584be00d19bc3080c78deee0953af250bed99b",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/DNANet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "DNANet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 58.872423032755506,
+      "nIoU": 50.5599942470274,
+      "F1": 74.11282827935153,
+      "Pd": 81.48148148148148,
+      "Fa": 70.97993917133084
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/DNANet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "4913624b9c0d043fa1cda87c1848d3f5dc7f1c0de9bfe8f36256519a257df6e8",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/DNANet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/DNANet",
+    "source_commit": "21584be00d19bc3080c78deee0953af250bed99b",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/DNANet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "DNANet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 62.20114541983576,
+      "nIoU": 65.8556518539556,
+      "F1": 76.69630847406964,
+      "Pd": 88.25396825396825,
+      "Fa": 107.684767389872
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/DNANet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "93c49c2bfe7166659e152be69f33b22a2fa923ab841276c64960daf85d4c6073",
+    "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/DNANet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/DNANet",
+    "source_commit": "21584be00d19bc3080c78deee0953af250bed99b",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/DNANet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MSHNet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 60.0779389478242,
+      "nIoU": 73.36071184435434,
+      "F1": 75.06086015688396,
+      "Pd": 97.24770642201835,
+      "Fa": 212.46480678331014
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/MSHNet/checkpoints/latest.pt",
+    "checkpoint_sha256": "3df569a840d03a113a7dfff335f16b7356842031a620333c3c523bec755d9ce8",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/MSHNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/MSHNet",
+    "source_commit": "46cdfd46802629da51f70124662af7335be74b56",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/MSHNet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MSHNet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 55.52052218165726,
+      "nIoU": 53.889188155784794,
+      "F1": 71.3996087497777,
+      "Pd": 83.83838383838383,
+      "Fa": 67.0134131588153
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet/checkpoints/latest.pt",
+    "checkpoint_sha256": "6265f0c965ec983af61a44efcbc4689cf2c6f253d3ec6ff86c98ad4f669d37a5",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/MSHNet",
+    "source_commit": "46cdfd46802629da51f70124662af7335be74b56",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MSHNet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 57.60682262916557,
+      "nIoU": 64.73322668604541,
+      "F1": 73.10194021829773,
+      "Pd": 87.61904761904762,
+      "Fa": 136.13413615399097
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MSHNet/checkpoints/latest.pt",
+    "checkpoint_sha256": "6c38125e2f2e8fe7ded2cfc289dacca48dd3ea30d108940e67346c91f51e598c",
+    "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MSHNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/MSHNet",
+    "source_commit": "46cdfd46802629da51f70124662af7335be74b56",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/MSHNet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SCTransNet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 59.030837004405285,
+      "nIoU": 72.0942229666611,
+      "F1": 74.23822714681441,
+      "Pd": 91.74311926605505,
+      "Fa": 160.2445410197014
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/SCTransNet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "626bd5e9a4004bc78a6bf13d3895384a9ab38cb34a7f97fe1e66e897043b15d0",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/SCTransNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/SCTransNet",
+    "source_commit": "e0276283794e9a54db334c2105f6e70107312202",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/SCTransNet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SCTransNet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 56.34854771784232,
+      "nIoU": 45.13224754725596,
+      "F1": 72.08067940552017,
+      "Pd": 71.38047138047138,
+      "Fa": 89.82568237912002
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/SCTransNet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "40ec3f0b28a04218cd133d4d55a70864165b35078405daf5a67261649b454dbe",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/SCTransNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/SCTransNet",
+    "source_commit": "e0276283794e9a54db334c2105f6e70107312202",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/SCTransNet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SCTransNet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 63.72224984644184,
+      "nIoU": 64.97254712096942,
+      "F1": 77.84189370254578,
+      "Pd": 90.68783068783068,
+      "Fa": 134.9851309535015
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet/checkpoints/epoch_0125.pt",
+    "checkpoint_sha256": "538ff96ac874d0557175cfb4862dac20e90d6ac3e490fbf36a61614240048484",
+    "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/SCTransNet",
+    "source_commit": "e0276283794e9a54db334c2105f6e70107312202",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "RPCANet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 46.31004366812227,
+      "nIoU": 55.40393542388428,
+      "F1": 63.30398447992837,
+      "Pd": 90.8256880733945,
+      "Fa": 205.8092827153992
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/RPCANet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "81d51413cffc8c45633f7f7dfecdfabb965fa68d5ee270e3a20a9a703dcf7af7",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/RPCANet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/RPCANet",
+    "source_commit": "1c32231a5c3eac1cfd6f2bdea60eb37647a70eeb",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/RPCANet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "RPCANet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 43.41468491439871,
+      "nIoU": 41.31897523947888,
+      "F1": 60.54426705370101,
+      "Pd": 77.10437710437711,
+      "Fa": 88.63003099735697
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/RPCANet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "ef5f0ad00c5f35b4878bdd667b967687a2eaed29efc973350d0c3fdb1adbf899",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/RPCANet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/RPCANet",
+    "source_commit": "1c32231a5c3eac1cfd6f2bdea60eb37647a70eeb",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/RPCANet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "RPCANet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 17.366693171887672,
+      "nIoU": 51.04983812707684,
+      "F1": 29.593903862407597,
+      "Pd": 90.37037037037037,
+      "Fa": 2268.228186182229
+    },
+    "checkpoint": "outputs/comparison_task_adaptation_20261104/RPCANet/NUDT-SIRST/full50/model.pt",
+    "checkpoint_sha256": "a479b55e19edf2cacfb1ad2ded779c4f7f4dc8b98f7c79fe8885b4e305a8d81b",
+    "config": "outputs/comparison_task_adaptation_20261104/RPCANet/NUDT-SIRST/full50/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/RPCANet",
+    "source_commit": "1c32231a5c3eac1cfd6f2bdea60eb37647a70eeb",
+    "runners": {
+      "scripts/run_comparison_task_adaptation.py": "5dc952f619bf0f134f5b1ff861c73e0eaf608fed70a6ae488868c2a8ba13d975",
+      "scripts/run_comparison_recovery_exploration.py": "e09d73931803b6b9b6bbfe858db7c0333bd044bad69cbd8fd2ad1df6d381d202"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/RPCANet/NUDT-SIRST/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "ILNet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 63.20857955789013,
+      "nIoU": 77.5620875373033,
+      "F1": 77.45742255598766,
+      "Pd": 99.08256880733946,
+      "Fa": 203.93208361932176
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/ILNet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "7ce74fcd6a800f7df24abd0db8e21e7c5044880bac77fe0feef94635f6951339",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/ILNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ILNet",
+    "source_commit": "82513dde1350c895c0a18b42d5543c4424e5da23",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/ILNet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "ILNet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 61.78248638295325,
+      "nIoU": 58.90055160292199,
+      "F1": 76.37722446261422,
+      "Pd": 87.87878787878788,
+      "Fa": 40.99376166044776
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ILNet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "fdd039b611186932ab46966fb2b24ae6ac4c33b0e0b0fa5320027fe7d0efc8b8",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ILNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ILNet",
+    "source_commit": "82513dde1350c895c0a18b42d5543c4424e5da23",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ILNet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "ILNet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 56.571629482835775,
+      "nIoU": 57.581160482658525,
+      "F1": 72.26293763396959,
+      "Pd": 85.5026455026455,
+      "Fa": 68.27388901308359
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ILNet/checkpoints/epoch_0125.pt",
+    "checkpoint_sha256": "92d05f36511ae2efad52d8ec52cb4ba9cd8e25424cae988c4b8f23bb55a072f5",
+    "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ILNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/ILNet",
+    "source_commit": "82513dde1350c895c0a18b42d5543c4424e5da23",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nudt_split_sampler_500_20261102/ILNet_epoch125/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "HDNet",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 62.27725063642675,
+      "nIoU": 68.60533738032547,
+      "F1": 76.75413576725613,
+      "Pd": 92.66055045871559,
+      "Fa": 161.60977672593953
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/HDNet/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "9b2deec35192bd21cd714403af2acad6fae53dd72799664b9b5c5c886afbe35f",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/HDNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/HDNet",
+    "source_commit": "ed9436baaceacae57274457d5c89f9c627111bc0",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/HDNet/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "HDNet",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 59.29285248750815,
+      "nIoU": 55.961981630721084,
+      "F1": 74.44508847897986,
+      "Pd": 86.86868686868686,
+      "Fa": 73.35226334149564
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/HDNet/checkpoints/latest.pt",
+    "checkpoint_sha256": "5b4979f36a22cbd2a32663a29c7b67d122e7d30464b607937ff54f8e3853fd3c",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/HDNet/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/HDNet",
+    "source_commit": "ed9436baaceacae57274457d5c89f9c627111bc0",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/HDNet/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "HDNet",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 61.610223289448264,
+      "nIoU": 62.96703007490208,
+      "F1": 76.24545283760013,
+      "Pd": 89.2063492063492,
+      "Fa": 181.91050334149097
+    },
+    "checkpoint": "outputs/comparison_task_adaptation_20261104/HDNet/NUDT-SIRST/full50/model.pt",
+    "checkpoint_sha256": "85a8d1c2490c07de40a5fbe9e17a03fb097a2a57093ebd605016c8694c772929",
+    "config": "outputs/comparison_task_adaptation_20261104/HDNet/NUDT-SIRST/full50/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/HDNet",
+    "source_commit": "ed9436baaceacae57274457d5c89f9c627111bc0",
+    "runners": {
+      "scripts/run_comparison_task_adaptation.py": "5dc952f619bf0f134f5b1ff861c73e0eaf608fed70a6ae488868c2a8ba13d975",
+      "scripts/run_comparison_recovery_exploration.py": "e09d73931803b6b9b6bbfe858db7c0333bd044bad69cbd8fd2ad1df6d381d202"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/HDNet/NUDT-SIRST/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SAM-SPL",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 54.249933386624036,
+      "nIoU": 60.11170276383354,
+      "F1": 70.34030057004664,
+      "Pd": 79.81651376146789,
+      "Fa": 64.67804158303176
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/SIRST/SAM-SPL/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "cb95383fa1f18e3dfdd2b46af837fa54e05d655909417de03ae0a0e003d83b7e",
+    "config": "outputs/comparison_recent_a_20261104/SIRST/SAM-SPL/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/SAM-SPL",
+    "source_commit": "1bde7b510ba00eb0ba92a8705f37bac298070e66",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164",
+      "scripts/comparison_added_irstd_adapter.py": "92e26702f3288ac492b3ea7c7cb210cb24c3b4a466371b6ec82e00f250609eb5"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/SIRST/SAM-SPL/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SAM-SPL",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 30.82441561547199,
+      "nIoU": 33.014529259590525,
+      "F1": 47.12333775076544,
+      "Pd": 59.93265993265993,
+      "Fa": 41.37333352767413
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/IRSTD-1k/SAM-SPL/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "e5cc917d973bd13927ca51fe76c711958bf2f05e34a2b5f4789c113dfb59ae88",
+    "config": "outputs/comparison_recent_a_20261104/IRSTD-1k/SAM-SPL/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/SAM-SPL",
+    "source_commit": "1bde7b510ba00eb0ba92a8705f37bac298070e66",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164",
+      "scripts/comparison_added_irstd_adapter.py": "92e26702f3288ac492b3ea7c7cb210cb24c3b4a466371b6ec82e00f250609eb5"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/IRSTD-1k/SAM-SPL/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "SAM-SPL",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 46.79924889040628,
+      "nIoU": 49.517903071903426,
+      "F1": 63.75952090237804,
+      "Pd": 71.53439153439153,
+      "Fa": 157.0230506988893
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/NUDT-SIRST/SAM-SPL/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "85c877cdc68171e2cc4ce16853629704abb2878d3ee73121d6d0734164cc1c75",
+    "config": "outputs/comparison_recent_a_20261104/NUDT-SIRST/SAM-SPL/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/SAM-SPL",
+    "source_commit": "1bde7b510ba00eb0ba92a8705f37bac298070e66",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164",
+      "scripts/comparison_added_irstd_adapter.py": "92e26702f3288ac492b3ea7c7cb210cb24c3b4a466371b6ec82e00f250609eb5"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/NUDT-SIRST/SAM-SPL/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MLP-Net",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 21.978897073462075,
+      "nIoU": 25.286221656308467,
+      "F1": 36.03721233882814,
+      "Pd": 98.1651376146789,
+      "Fa": 1995.803948056877
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/SIRST/MLP-Net/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "35a3edec61a247de534806bc97b42ee37d429ffb575648c5c59fa40932b815e8",
+    "config": "outputs/comparison_recent_a_20261104/SIRST/MLP-Net/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/MLP-Net",
+    "source_commit": "2d512d8b87ec5678dd3bc2e1f6cf13aacac00153",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164",
+      "scripts/comparison_added_irstd_adapter.py": "92e26702f3288ac492b3ea7c7cb210cb24c3b4a466371b6ec82e00f250609eb5"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/SIRST/MLP-Net/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MLP-Net",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 6.8290545035959065,
+      "nIoU": 9.879890236497983,
+      "F1": 12.785013469095222,
+      "Pd": 80.8080808080808,
+      "Fa": 3318.122370326104
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/IRSTD-1k/MLP-Net/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "14216f2ed49680645357500e57f1dea4e0b8b01898b8ca077941514e01f0905d",
+    "config": "outputs/comparison_recent_a_20261104/IRSTD-1k/MLP-Net/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/MLP-Net",
+    "source_commit": "2d512d8b87ec5678dd3bc2e1f6cf13aacac00153",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164",
+      "scripts/comparison_added_irstd_adapter.py": "92e26702f3288ac492b3ea7c7cb210cb24c3b4a466371b6ec82e00f250609eb5"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/IRSTD-1k/MLP-Net/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MLP-Net",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 16.857744054071286,
+      "nIoU": 23.660181071307697,
+      "F1": 28.85173625510182,
+      "Pd": 95.76719576719577,
+      "Fa": 2953.2880668180533
+    },
+    "checkpoint": "outputs/comparison_recent_a_20261104/NUDT-SIRST/MLP-Net/checkpoints/epoch_0120.pt",
+    "checkpoint_sha256": "f8bd40bd5f72ef7b81b6fc4669752be0e224a370d0692d88b1370ff092c88b7b",
+    "config": "outputs/comparison_recent_a_20261104/NUDT-SIRST/MLP-Net/config.json",
+    "source_directory": "outputs/comparison_recent_a_20261104/sources/MLP-Net",
+    "source_commit": "2d512d8b87ec5678dd3bc2e1f6cf13aacac00153",
+    "runners": {
+      "scripts/run_recent_a_comparison.py": "229bdfa41812fe146eeb02ce800804006f26f16473742b21ffcb52e85a1f5164",
+      "scripts/comparison_added_irstd_adapter.py": "92e26702f3288ac492b3ea7c7cb210cb24c3b4a466371b6ec82e00f250609eb5"
+    },
+    "metric_source": "outputs/comparison_recent_a_20261104/NUDT-SIRST/MLP-Net/epoch_0120/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MSHNet+NS-FPN",
+    "dataset": "SIRST",
+    "values": {
+      "IoU": 58.354922279792746,
+      "nIoU": 64.59958632164974,
+      "F1": 73.70143149284253,
+      "Pd": 95.41284403669725,
+      "Fa": 214.6833148059471
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/SIRST/MSHNet+NS-FPN/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "744c6f78053cdb5b584d18a220d323647b1665b907f092af43203e1fa591b857",
+    "config": "outputs/comparison_50shot_5support/full16/SIRST/MSHNet+NS-FPN/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/NS-FPN",
+    "source_commit": "b857bef068ba48f1258b62de6bf082f73dbafde4",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/nuaa_coordinate_corrected_20261101/SIRST/MSHNet+NS-FPN/metrics/summary.json",
+    "metric_source_exists": false,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MSHNet+NS-FPN",
+    "dataset": "IRSTD-1k",
+    "values": {
+      "IoU": 53.1659440659393,
+      "nIoU": 51.209310838994384,
+      "F1": 69.42267015055369,
+      "Pd": 80.8080808080808,
+      "Fa": 122.26009843361318
+    },
+    "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet+NS-FPN/checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "73dca7f9079b79a2f748ec7347a111c089af525121b93494eed95ab67b6825f8",
+    "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet+NS-FPN/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/NS-FPN",
+    "source_commit": "b857bef068ba48f1258b62de6bf082f73dbafde4",
+    "runners": {
+      "scripts/run_comparison_hdnet.py": "2998f6d5bded0f9bacdcb3398600cc68b79bcdcd36b20cba81b5ea81c9d93db6"
+    },
+    "metric_source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/MSHNet+NS-FPN/metrics/summary.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  },
+  {
+    "method": "MSHNet+NS-FPN",
+    "dataset": "NUDT-SIRST",
+    "values": {
+      "IoU": 52.99880207640091,
+      "nIoU": 54.649688065297255,
+      "F1": 69.28002227093991,
+      "Pd": 86.03174603174604,
+      "Fa": 212.5659620905497
+    },
+    "checkpoint": "outputs/comparison_task_adaptation_20261104/MSHNet+NS-FPN/NUDT-SIRST/full50/model.pt",
+    "checkpoint_sha256": "129ff9c21d3e7e9164dd17c3fb4943ced33405a77ee7a933eea2deecd340b727",
+    "config": "outputs/comparison_task_adaptation_20261104/MSHNet+NS-FPN/NUDT-SIRST/full50/config.json",
+    "source_directory": "outputs/comparison_50shot_5support/sources/NS-FPN",
+    "source_commit": "b857bef068ba48f1258b62de6bf082f73dbafde4",
+    "runners": {
+      "scripts/run_comparison_task_adaptation.py": "5dc952f619bf0f134f5b1ff861c73e0eaf608fed70a6ae488868c2a8ba13d975",
+      "scripts/run_comparison_recovery_exploration.py": "e09d73931803b6b9b6bbfe858db7c0333bd044bad69cbd8fd2ad1df6d381d202"
+    },
+    "metric_source": "outputs/comparison_task_adaptation_20261104/MSHNet+NS-FPN/NUDT-SIRST/report.json",
+    "metric_source_exists": true,
+    "weight_kind": "one_retained_task_checkpoint"
+  }
+]

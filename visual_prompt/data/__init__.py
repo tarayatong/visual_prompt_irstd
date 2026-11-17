@@ -1,6 +1,1 @@
-"""Dataset adapters used by the visual-prompt experiments."""
-
-from .image_folder import ImageFolder
-
-__all__ = ["ImageFolder"]
-
+"""Dataset adapters for the clean SAM2 baseline."""

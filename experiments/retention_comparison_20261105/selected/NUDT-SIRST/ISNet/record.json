@@ -1,0 +1,28 @@
+{
+  "dataset": "NUDT-SIRST",
+  "method": "ISNet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 36.524743480915575,
+    "nIoU": 42.19182202329533,
+    "F1": 53.50640850831743,
+    "Pd": 93.54497354497354,
+    "Fa": 892.4093591161521
+  },
+  "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ISNet/metrics/summary.json",
+  "review": "训练日程待复核，不作已收敛比较",
+  "epochs": "500",
+  "schedule_status": "cap_without_confirmed_convergence",
+  "category": "IRSTD",
+  "venue": "CVPR",
+  "year": 2022,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ISNet",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ISNet/checkpoints/epoch_0500.pt",
+  "expected_epoch": 500,
+  "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/ISNet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

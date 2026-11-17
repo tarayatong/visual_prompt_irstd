@@ -1,3 +1,4 @@
+import glob
 import os
 import random
 
@@ -11,11 +12,26 @@ def read_split_ids(data_root, split_name):
         return [line.strip() for line in handle if line.strip()]
 
 
+def resolve_sample_file(directory, sample_id):
+    exact = os.path.join(directory, f"{sample_id}.png")
+    if os.path.exists(exact):
+        return exact
+    matches = sorted(glob.glob(os.path.join(directory, f"{sample_id}*.png")))
+    if not matches:
+        return exact
+    target01 = [path for path in matches if os.path.splitext(os.path.basename(path))[0].endswith("Target01")]
+    return target01[0] if target01 else matches[0]
+
+
 def raw_irstd_paths(data_root, sample_id):
-    return (
-        os.path.join(data_root, "IRSTD1k_Img", f"{sample_id}.png"),
-        os.path.join(data_root, "IRSTD1k_Label", f"{sample_id}.png"),
-    )
+    layouts = [("images", "masks"), ("IRSTD1k_Img", "IRSTD1k_Label")]
+    for image_dir, mask_dir in layouts:
+        image_path = resolve_sample_file(os.path.join(data_root, image_dir), sample_id)
+        mask_path = resolve_sample_file(os.path.join(data_root, mask_dir), sample_id)
+        if os.path.exists(image_path) and os.path.exists(mask_path):
+            return image_path, mask_path
+    image_dir, mask_dir = layouts[0]
+    return resolve_sample_file(os.path.join(data_root, image_dir), sample_id), resolve_sample_file(os.path.join(data_root, mask_dir), sample_id)
 
 
 def parse_id_list(value):
@@ -39,19 +55,11 @@ class RawIRSTDDataset(torch.utils.data.Dataset):
         return len(self.sample_ids)
 
     def __getitem__(self, index):
-        image = Image.open(self.images[index]).convert("RGB").resize(
-            (self.image_size, self.image_size), Image.BILINEAR
-        )
-        mask = Image.open(self.masks[index]).convert("L").resize(
-            (self.image_size, self.image_size), Image.NEAREST
-        )
+        image = Image.open(self.images[index]).convert("RGB").resize((self.image_size, self.image_size), Image.BILINEAR)
+        mask = Image.open(self.masks[index]).convert("L").resize((self.image_size, self.image_size), Image.NEAREST)
         image_np = np.asarray(image, dtype=np.float32) / 255.0
         mask_np = (np.asarray(mask, dtype=np.uint8) >= 127).astype(np.float32)
-        return (
-            torch.from_numpy(image_np.transpose(2, 0, 1)),
-            torch.from_numpy(mask_np[None]),
-            os.path.basename(self.images[index]),
-        )
+        return torch.from_numpy(image_np.transpose(2, 0, 1)), torch.from_numpy(mask_np[None]), os.path.basename(self.images[index])
 
 
 def positive_trainval_ids(data_root):
@@ -64,33 +72,16 @@ def positive_trainval_ids(data_root):
     return result
 
 
-def build_raw_support_paths(
-    data_root,
-    k_shot,
-    support_ids=None,
-    fixed_first_ids=None,
-    fixed_last_ids=None,
-    random_seed=None,
-):
+def build_raw_support_paths(data_root, k_shot, support_ids=None, random_seed=None):
     positive_ids = positive_trainval_ids(data_root)
     if not positive_ids:
         raise RuntimeError("No positive support masks found in the IRSTD-1k trainval split.")
-
     explicit_ids = parse_id_list(support_ids)
     if explicit_ids:
         selected_ids = explicit_ids
     else:
-        first_ids = parse_id_list(fixed_first_ids)
-        last_ids = parse_id_list(fixed_last_ids)
-        fixed_ids = first_ids + last_ids
-        if len(fixed_ids) > k_shot:
-            raise ValueError(f"Fixed support ids exceed k_shot={k_shot}: {fixed_ids}")
-        pool = [sample_id for sample_id in positive_ids if sample_id not in set(fixed_ids)]
-        needed = k_shot - len(fixed_ids)
-        if needed > len(pool):
-            raise ValueError(f"Need {needed} support ids, but only {len(pool)} are available.")
-        selected_ids = first_ids + random.Random(random_seed).sample(pool, needed) + last_ids
-
+        rng = random.Random(random_seed)
+        selected_ids = rng.sample(positive_ids, k_shot)
     missing = [sample_id for sample_id in selected_ids if sample_id not in set(positive_ids)]
     if missing:
         raise ValueError(f"Support id(s) are not positive trainval samples: {', '.join(missing)}")

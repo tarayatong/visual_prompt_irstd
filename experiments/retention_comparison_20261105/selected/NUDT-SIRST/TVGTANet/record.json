@@ -1,0 +1,80 @@
+{
+  "dataset": "NUDT-SIRST",
+  "method": "TVGTANet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 20.73028883260319,
+    "nIoU": 23.743824140539154,
+    "F1": 34.341488011093006,
+    "Pd": 78.3068783068783,
+    "Fa": 1463.2811029273344
+  },
+  "source": "outputs/comparison_task_adaptation_20261104/TVGTANet/NUDT-SIRST/report.json",
+  "review": "单次设置参考，正式比较待协议对齐",
+  "epochs": "20q",
+  "schedule_status": "",
+  "category": "FSS",
+  "venue": "ACM Multimedia",
+  "year": 2025,
+  "origin": "task_adaptation_replacement",
+  "previous_result": {
+    "dataset": "NUDT-SIRST",
+    "method": "TVGTANet",
+    "labels": 5,
+    "status": "verified",
+    "values": {
+      "IoU": 19.84661510384983,
+      "nIoU": 22.254087495617096,
+      "F1": 33.12002610445407,
+      "Pd": 71.95767195767196,
+      "Fa": 1464.7748096879707
+    },
+    "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/TVGTANet/metrics/summary.json",
+    "review": "单次设置参考，正式比较待协议对齐",
+    "epochs": "",
+    "schedule_status": "",
+    "category": "FSS",
+    "venue": "ACM Multimedia",
+    "year": 2025,
+    "origin": "preserved_existing_result"
+  },
+  "adaptation_marker": "A8",
+  "adaptation_tags": [],
+  "support_shots": 5,
+  "adapted_version": "TVGTANet",
+  "selection": {
+    "settings": {
+      "epochs": 20,
+      "pool": "original",
+      "template": "original"
+    },
+    "validation": {
+      "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+      "images": 10,
+      "IoU_percent": 14.14496833216045,
+      "nIoU_percent": 20.3298077069182,
+      "F1_percent": 24.784217016029594,
+      "Pd_percent": 56.25,
+      "Fa_per_million": 1432.80029296875,
+      "pixel_FP_per_million": 1432.80029296875,
+      "FP_per_image": 1.7,
+      "tp": 201,
+      "fp": 939,
+      "fn": 281,
+      "pixels": 655360,
+      "targets": 16,
+      "predictions": 26,
+      "detected": 9,
+      "unmatched_pixels": 645
+    }
+  },
+  "replacement_selection": "user_requested_posthoc_higher_test_IoU_display; five metrics from one configuration",
+  "table_adaptation_star": true,
+  "run_directory": "outputs/comparison_task_adaptation_20261104/TVGTANet/NUDT-SIRST",
+  "checkpoint": null,
+  "expected_epoch": null,
+  "config": "outputs/comparison_task_adaptation_20261104/TVGTANet/NUDT-SIRST/selection.json",
+  "metric_source_exists": true,
+  "weight_kind": "per_query_adaptation_no_static_task_checkpoint"
+}

@@ -1,0 +1,28 @@
+{
+  "dataset": "NUDT-SIRST",
+  "method": "IFA",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 29.19725155019273,
+    "nIoU": 26.8729999206553,
+    "F1": 45.19794531209464,
+    "Pd": 75.34391534391534,
+    "Fa": 720.541161226939
+  },
+  "source": "outputs/comparison_50shot_5support/fss50_v2/NUDT-SIRST/IFA/metrics/summary.json",
+  "review": "50张适配已完成；单次设置，非纯样本数消融",
+  "epochs": "500",
+  "schedule_status": "fixed_cap500_train_curve_review",
+  "category": "FSS",
+  "venue": "CVPR",
+  "year": 2024,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/fss50_v2/NUDT-SIRST/IFA",
+  "checkpoint": "outputs/comparison_50shot_5support/fss50_v2/NUDT-SIRST/IFA/checkpoints/epoch_0500.pt",
+  "expected_epoch": 500,
+  "config": "outputs/comparison_50shot_5support/fss50_v2/NUDT-SIRST/IFA/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

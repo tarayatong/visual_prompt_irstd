@@ -1,0 +1,32 @@
+{
+  "method": "MLP-Net",
+  "dataset": "IRSTD-1k",
+  "category": "IRSTD",
+  "venue": "IEEE TGRS",
+  "year": 2025,
+  "labels": 50,
+  "epochs": 120,
+  "values": {
+    "IoU": 6.8290545035959065,
+    "nIoU": 9.879890236497983,
+    "F1": 12.785013469095222,
+    "Pd": 80.8080808080808,
+    "Fa": 3318.122370326104
+  },
+  "status": "verified",
+  "origin": "new_method_epoch120",
+  "source": "outputs/comparison_recent_a_20261104/IRSTD-1k/MLP-Net/epoch_0120/metrics/summary.json",
+  "metric_counts_verified": true,
+  "quality_review": null,
+  "training_horizon": 120,
+  "reused_existing_epoch120": false,
+  "variant": "MLP-Net_train50",
+  "deviations": "fixed train50, seed111, batch2/4, resize256 with flips/transpose rather than native crop/copy-paste; all50 every epoch; fixed120 horizon; no validation/test model selection",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_recent_a_20261104/IRSTD-1k/MLP-Net",
+  "checkpoint": "outputs/comparison_recent_a_20261104/IRSTD-1k/MLP-Net/checkpoints/epoch_0120.pt",
+  "expected_epoch": 120,
+  "config": "outputs/comparison_recent_a_20261104/IRSTD-1k/MLP-Net/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

@@ -1,0 +1,19 @@
+{
+  "method": "TVGTANet",
+  "source_commit": "7f45050d02e2dd28b7ec9a49b6d28d897720b4d5",
+  "input_size": 400,
+  "support_shots": 5,
+  "actual_annotation_budget": 5,
+  "allocated_annotation_budget": 50,
+  "adaptation": "native every-episode,20epochs (generic branch); fixed support and unlabeled individual query",
+  "query_labels_for_adaptation": false,
+  "postprocessing": "native default off",
+  "rng_policy": "native augmentation seeded2; independent query head RNG index+2",
+  "manifest_sha256": "456cee6fa79ebccb486a34e1a5180477cfab0b966da523b22aa05ac46ecf6a2a",
+  "clip_weight_sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+  "clip_foreground": "infrared small target",
+  "clip_background": "infrared background",
+  "clip_template": "a clean origami {}.",
+  "cam": "native1008px attention-refined GradCAM; uint8 threshold128",
+  "packaging_adapter": "comparison_tvgtanet_adapter.py; missing helpers from official PI-CLIP utils.py"
+}

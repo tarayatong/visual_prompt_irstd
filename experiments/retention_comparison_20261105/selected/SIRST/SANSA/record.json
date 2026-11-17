@@ -1,0 +1,32 @@
+{
+  "method": "SANSA",
+  "dataset": "SIRST",
+  "category": "FSS",
+  "venue": "NeurIPS",
+  "year": 2025,
+  "labels": 50,
+  "epochs": 120,
+  "values": {
+    "IoU": 62.08289054197662,
+    "nIoU": 76.12955570089387,
+    "F1": 76.60634670862838,
+    "Pd": 99.08256880733946,
+    "Fa": 227.1410906253701
+  },
+  "status": "verified",
+  "origin": "new_method_epoch120",
+  "source": "outputs/comparison_recent_a_20261104/SIRST/SANSA/epoch_0120/metrics/summary.json",
+  "metric_counts_verified": true,
+  "quality_review": null,
+  "training_horizon": 120,
+  "reused_existing_epoch120": false,
+  "variant": "SANSA_tiny_train50",
+  "deviations": "author-supported tiny backbone rather than paper large; adapter stages2/3; fixed one-support training for10GB; inference uses frozen5; target-only adapter training instead of source benchmark training; native focal+Dice loss",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_recent_a_20261104/SIRST/SANSA",
+  "checkpoint": "outputs/comparison_recent_a_20261104/SIRST/SANSA/checkpoints/epoch_0120.pt",
+  "expected_epoch": 120,
+  "config": "outputs/comparison_recent_a_20261104/SIRST/SANSA/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

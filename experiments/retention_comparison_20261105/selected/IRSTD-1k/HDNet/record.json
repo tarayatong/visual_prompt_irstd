@@ -1,0 +1,28 @@
+{
+  "dataset": "IRSTD-1k",
+  "method": "HDNet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 59.29285248750815,
+    "nIoU": 55.961981630721084,
+    "F1": 74.44508847897986,
+    "Pd": 86.86868686868686,
+    "Fa": 73.35226334149564
+  },
+  "source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/HDNet/metrics/summary.json",
+  "review": "训练日程待复核，不作已收敛比较",
+  "epochs": "1200",
+  "schedule_status": "cap_without_confirmed_convergence",
+  "category": "IRSTD",
+  "venue": "IEEE TGRS",
+  "year": 2025,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/IRSTD-1k/HDNet",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/HDNet/checkpoints/latest.pt",
+  "expected_epoch": 1200,
+  "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/HDNet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

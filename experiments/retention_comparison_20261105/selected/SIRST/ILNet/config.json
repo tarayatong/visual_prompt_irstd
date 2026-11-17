@@ -1,0 +1,37 @@
+{
+  "commit": "82513dde1350c895c0a18b42d5543c4424e5da23",
+  "epochs": 500,
+  "train_images": 50,
+  "initialization": "random",
+  "optimizer": "native Adan",
+  "lr": 0.001,
+  "batch_size": 2,
+  "input_size": 512,
+  "scheduler": "native per-batch warmup10+cosine; horizon=500",
+  "warm_epoch": 5,
+  "method": "ILNet",
+  "adaptive_schedule": true,
+  "normalization": {
+    "mean": [
+      0.4355751185969094,
+      0.43500200319248145,
+      0.435507982316603
+    ],
+    "std": [
+      0.21133335405284714,
+      0.2113450459653692,
+      0.2112747309700509
+    ],
+    "source": "fixed train50 only"
+  },
+  "test_resize": "512x512 before original-resolution evaluation",
+  "selection": "final fixed epoch; never evaluate test during training",
+  "manifest_sha256": "456cee6fa79ebccb486a34e1a5180477cfab0b966da523b22aa05ac46ecf6a2a",
+  "weight_decay": 0.0001,
+  "amp": true,
+  "loss": "native sum BCEWithLogits(main-first and auxiliary heads)",
+  "deviations": "batch2 rather than author8 for10GB GPU; train50-only normalization instead of author dataset constants;500epoch hard cap",
+  "actual_final_epoch": 500,
+  "convergence_epoch": 500,
+  "epoch_argument_is": "safety cap"
+}

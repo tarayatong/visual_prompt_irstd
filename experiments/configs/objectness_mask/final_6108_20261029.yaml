@@ -1,0 +1,28 @@
+name: final_support_editing_radial_mask_6108
+status: user_confirmed_final
+confirmed_date: '2026-10-29'
+selection_note: user_selected_61.08_observation_after_locked_OOF_family_comparisons_single_seed
+data: {dataset: IRSTD-1k, train_images: 50, support_images_in_train: 5, test_images: 201, test_targets: 297}
+frozen: [SAM2_Bplus, edited_support_embedding, original_train50_F4_normalization_and_prototypes]
+candidate: {semantic: edited_support_embedding, count: 5, peak_suppression_radius: 7}
+objectness:
+  input: original_global_SAM_ROI_F4_1440
+  architecture: MLP_1440_128_1
+  checkpoint: outputs/studies/objectness_mask/joint_routing_20261029/artifacts/paired_control_full50.pt
+  state_key: obj
+  statistics_key: original_statistics
+  threshold: 0.1
+  point_NMS_radius: 0
+mask:
+  input: locally_reencoded_SAM352_concat_radial64
+  checkpoint: outputs/studies/objectness_mask/radial_autonomous_search_20261029/final_independent/mask/artifacts/selected_full50.pt
+  state_key: model
+  crop_size: 64
+  radial: {directions: 8, radii: [1, 2, 3, 4, 6, 8, 12, 16], components: [contrast], L2_norm: 0.25}
+  readout: ROI_conditioned_MLP_vector_dot_product
+  logit_threshold: 0
+  labels: center_instance_only_else_empty
+training: {seed: 111, epochs: 120, positive_ROIs_per_epoch: 128, negative_ROIs_per_epoch: 128, updates_per_epoch: 16, augmentation: false, coupled_loss: false}
+fusion: paste_binary_ROI_masks_union_no_mask_NMS
+test_metrics: {mIoU_percent: 61.08067461596305, nIoU_percent: 59.548474141810416, Pd_percent: 91.24579124579125, Fa_per_million: 77.50857528762438, F1_percent: 75.83861287095698}
+factorial_ablation: outputs/studies/objectness_mask/final_two_module_ablation_20261029

@@ -1,0 +1,86 @@
+{
+  "dataset": "IRSTD-1k",
+  "method": "IFA",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 19.546597037507016,
+    "nIoU": 23.317999323580867,
+    "F1": 32.70121864091939,
+    "Pd": 87.54208754208754,
+    "Fa": 501.64217972636817
+  },
+  "source": "outputs/comparison_task_adaptation_20261104/IFA/IRSTD-1k/report.json",
+  "review": "50张适配已完成；单次设置，非纯样本数消融",
+  "epochs": "800u",
+  "schedule_status": "fixed_cap500_train_curve_review",
+  "category": "FSS",
+  "venue": "CVPR",
+  "year": 2024,
+  "origin": "task_adaptation_replacement",
+  "previous_result": {
+    "dataset": "IRSTD-1k",
+    "method": "IFA",
+    "labels": 50,
+    "status": "verified",
+    "values": {
+      "IoU": 16.664879069019147,
+      "nIoU": 13.961806245849539,
+      "F1": 28.56880185708704,
+      "Pd": 23.232323232323232,
+      "Fa": 431.7060631899098
+    },
+    "source": "outputs/comparison_50shot_5support/fss50_v2/IRSTD-1k/IFA/metrics/summary.json",
+    "review": "50张适配已完成；单次设置，非纯样本数消融",
+    "epochs": "500",
+    "schedule_status": "fixed_cap500_train_curve_review",
+    "category": "FSS",
+    "venue": "CVPR",
+    "year": 2024,
+    "origin": "preserved_existing_result"
+  },
+  "adaptation_marker": "A4",
+  "adaptation_tags": [
+    "T",
+    "P",
+    "S"
+  ],
+  "support_shots": 5,
+  "adapted_version": "IFA",
+  "selection": {
+    "pool": "area",
+    "tiled": true,
+    "updates": 800,
+    "decay_updates": [
+      272,
+      536
+    ],
+    "validation": {
+      "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+      "images": 10,
+      "IoU_percent": 18.563432835820894,
+      "nIoU_percent": 21.341506881669268,
+      "F1_percent": 31.31392604248623,
+      "Pd_percent": 88.23529411764706,
+      "Fa_per_million": 517.6544189453125,
+      "pixel_FP_per_million": 517.6544189453125,
+      "FP_per_image": 1.9,
+      "tp": 398,
+      "fp": 1357,
+      "fn": 389,
+      "pixels": 2621440,
+      "targets": 17,
+      "predictions": 34,
+      "detected": 15,
+      "unmatched_pixels": 533
+    }
+  },
+  "replacement_selection": "user_requested_posthoc_higher_test_IoU_display; five metrics from one configuration",
+  "table_adaptation_star": true,
+  "run_directory": "outputs/comparison_task_adaptation_20261104/IFA/IRSTD-1k",
+  "checkpoint": "outputs/comparison_task_adaptation_20261104/IFA/IRSTD-1k/full50/model.pt",
+  "expected_epoch": null,
+  "config": "outputs/comparison_task_adaptation_20261104/IFA/IRSTD-1k/full50/training_config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

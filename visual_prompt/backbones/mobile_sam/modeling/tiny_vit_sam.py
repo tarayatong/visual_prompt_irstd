@@ -595,7 +595,8 @@ class TinyViT(nn.Module):
             layer = self.layers[i]
             x = layer(x)
         B,_,C=x.size()
-        x = x.view(B, 64, 64, C)
+        height, width = self.layers[-1].input_resolution
+        x = x.view(B, height, width, C)
         x=x.permute(0, 3, 1, 2)
         x=self.neck(x)
         return x

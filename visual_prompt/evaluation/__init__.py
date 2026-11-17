@@ -1,2 +1,1 @@
-"""Dataset evaluation and ablation entry points."""
-
+"""Evaluation entry point for the clean SAM2 baseline."""

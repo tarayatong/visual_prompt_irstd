@@ -1,0 +1,109 @@
+{
+  "schema_version": 4,
+  "as_of": "2026-11-04",
+  "selected": [
+    {
+      "method": "PConv+SD",
+      "category": "IRSTD",
+      "venue": "AAAI",
+      "year": 2025
+    },
+    {
+      "method": "SANSA",
+      "category": "FSS",
+      "venue": "NeurIPS",
+      "year": 2025
+    },
+    {
+      "method": "PAHNet",
+      "category": "FSS",
+      "venue": "ICCV",
+      "year": 2025
+    },
+    {
+      "method": "SAM-SPL",
+      "category": "IRSTD",
+      "venue": "IEEE TGRS",
+      "year": 2025
+    },
+    {
+      "method": "SFDTNet",
+      "category": "IRSTD",
+      "venue": "IEEE TGRS",
+      "year": 2025
+    },
+    {
+      "method": "IOVarNet",
+      "category": "IRSTD",
+      "venue": "IEEE TGRS",
+      "year": 2025
+    },
+    {
+      "method": "MLP-Net",
+      "category": "IRSTD",
+      "venue": "IEEE TGRS",
+      "year": 2025
+    }
+  ],
+  "datasets": [
+    "IRSTD-1k",
+    "NUDT-SIRST",
+    "SIRST"
+  ],
+  "seed": 111,
+  "annotation_budget": 50,
+  "manifest_root": "D:\\workspace\\code\\visual_prompt\\outputs\\comparison_50shot_5support",
+  "maximum_epochs": 120,
+  "retained_epochs": [
+    120
+  ],
+  "total_training_jobs": 21,
+  "total_result_rows": 21,
+  "schedule": "120 epochs only; reuse existing epoch120 checkpoint without further training; disclose original schedule if reused",
+  "model_selection": "both epochs locked before test; evaluate only after training; no test-selected checkpoints",
+  "test_images": {
+    "IRSTD-1k": 201,
+    "NUDT-SIRST": 664,
+    "SIRST": 86
+  },
+  "threshold": 0.5,
+  "metrics": [
+    "IoU_percent",
+    "nIoU_percent",
+    "F1_percent",
+    "Pd_percent",
+    "Fa_per_million"
+  ],
+  "old_outputs_read_only": true,
+  "old_paused_mpa_not_resumed": true,
+  "gpu_parallelism": 1,
+  "output_root": "D:\\workspace\\code\\visual_prompt\\outputs\\comparison_recent_a_20261104",
+  "training_curves_are_not_validation": true,
+  "scope": "final23 external methods; only seven additions run120; existing results retained",
+  "additional_previously_authorized_reruns": [],
+  "new_training_jobs": 21,
+  "new_result_rows": 21,
+  "execution_method_order": [
+    "PConv+SD",
+    "SANSA",
+    "PAHNet",
+    "SAM-SPL",
+    "SFDTNet",
+    "IOVarNet",
+    "MLP-Net"
+  ],
+  "metadata_source": "docs/comparison_experiment_plan.md",
+  "implementation_source": "scripts/comparison_added_irstd_adapter.py",
+  "main_table": "docs/comparison_three_datasets.md",
+  "preserved_existing_results": [
+    "MPA",
+    "MSHNet+NS-FPN"
+  ],
+  "scheduled_start": "2026-11-04T22:00:00+08:00",
+  "report_only_epochs": [
+    120
+  ],
+  "final_external_methods": 23,
+  "final_fss_methods": 10,
+  "final_irstd_methods": 13
+}

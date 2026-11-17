@@ -1,0 +1,28 @@
+name: sam2_bplus_concat_w128_scorecorr_localcontrast_size
+description: Clean SAM2-B+ baseline with concat feature fusion, sliding window, score-token correction, local contrast, and size constraint.
+module: visual_prompt.evaluation.eval_sliding_window_semantic_mask
+output:
+  root: outputs/runs/sam2
+  subdir: sam2_bplus_concat_w128_scorecorr_localcontrast_size
+  arg: output_dir
+args:
+  data_root: D:/workspace/code/dataset/IRSTD-1k
+  device: cuda:0
+  encoder_input_size: 512
+  window_size: 128
+  overlap: 0.5
+  window_batch_size: 4
+  support_ids: XDU514,XDU646,XDU904,XDU660,XDU347
+  local_contrast_sigma: 7.0
+  final_area_scales: 0.25,0.5,0.75,1.0,1.5,2.0,3.0,4.0,6.0
+  final_area_weight: 0.05
+  final_contrast_weight: 0.20
+  final_area_penalty: 0.15
+  target_rf_radius_scale: 1.0
+  target_rf_radius_min: 0
+  edge_method: sobel
+  edge_quantile: 0.90
+  edge_exclude_dilate: 9
+  bright_threshold_mode: target_mean
+flags:
+  use_vector_correction: true

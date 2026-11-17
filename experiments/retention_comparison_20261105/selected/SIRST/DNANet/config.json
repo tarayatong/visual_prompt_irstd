@@ -1,0 +1,21 @@
+{
+  "commit": "21584be00d19bc3080c78deee0953af250bed99b",
+  "epochs": 500,
+  "train_images": 50,
+  "initialization": "random",
+  "optimizer": "Adagrad",
+  "lr": 0.05,
+  "batch_size": 4,
+  "input_size": 256,
+  "scheduler": "CosineAnnealingLR(T_max=500, eta_min=1e-5); horizon is declared safety cap",
+  "warm_epoch": 5,
+  "method": "DNANet",
+  "adaptive_schedule": true,
+  "normalization": "ImageNet RGB",
+  "test_resize": "256x256 before original-resolution evaluation",
+  "selection": "final fixed epoch; never evaluate test during training",
+  "manifest_sha256": "456cee6fa79ebccb486a34e1a5180477cfab0b966da523b22aa05ac46ecf6a2a",
+  "actual_final_epoch": 500,
+  "convergence_epoch": 475,
+  "epoch_argument_is": "safety cap"
+}

@@ -174,8 +174,8 @@ class PD_FAmeter:
 
             # self.dismatch_pixel += (predits - true_img).sum()
             self.dismatch = [x for x in self.image_area_total if x not in self.image_area_match]
-            self.all_pixel += size[0] * size[1]
-            self.FA += np.sum(self.dismatch)
+            self.all_pixel += labelss.size
+            self.FA += np.count_nonzero((predits > 0) & ~(labelss > 0))
             self.PD += len(self.distance_match)
 
     def get(self):

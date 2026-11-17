@@ -1,0 +1,21 @@
+{
+  "commit": "46cdfd46802629da51f70124662af7335be74b56",
+  "epochs": 1200,
+  "train_images": 50,
+  "initialization": "random",
+  "optimizer": "Adagrad",
+  "lr": 0.05,
+  "batch_size": 4,
+  "input_size": 256,
+  "scheduler": "author constant learning rate",
+  "warm_epoch": 5,
+  "method": "MSHNet",
+  "adaptive_schedule": true,
+  "normalization": "ImageNet RGB",
+  "test_resize": "256x256 before original-resolution evaluation",
+  "selection": "final fixed epoch; never evaluate test during training",
+  "manifest_sha256": "456cee6fa79ebccb486a34e1a5180477cfab0b966da523b22aa05ac46ecf6a2a",
+  "actual_final_epoch": 1175,
+  "convergence_epoch": 1075,
+  "epoch_argument_is": "safety cap"
+}

@@ -1,0 +1,76 @@
+{
+  "dataset": "NUDT-SIRST",
+  "method": "SCTransNet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 63.72224984644184,
+    "nIoU": 64.97254712096942,
+    "F1": 77.84189370254578,
+    "Pd": 90.68783068783068,
+    "Fa": 134.9851309535015
+  },
+  "source": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/summary.json",
+  "review": "训练日程待复核，不作已收敛比较",
+  "epochs": 125,
+  "schedule_status": "user_selected_epoch125_display",
+  "previous_result": {
+    "dataset": "NUDT-SIRST",
+    "method": "SCTransNet",
+    "labels": 50,
+    "status": "verified",
+    "values": {
+      "IoU": 69.63668887244017,
+      "nIoU": 70.24345416437336,
+      "F1": 82.10097631038307,
+      "Pd": 91.32275132275132,
+      "Fa": 94.42524737622364
+    },
+    "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet/metrics/summary.json",
+    "review": "训练日程待复核，不作已收敛比较",
+    "epochs": "500",
+    "schedule_status": "cap_without_confirmed_convergence"
+  },
+  "table_override": {
+    "dataset": "NUDT-SIRST",
+    "method": "SCTransNet",
+    "epochs": 125,
+    "source": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/summary.json",
+    "per_image": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/per_image.csv",
+    "audit": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/metrics/independent_audit.json",
+    "provenance": "outputs/nudt_split_sampler_500_20261102/SCTransNet_epoch125/provenance.json",
+    "per_image_sha256": "e36a80204a40bff2d4452389deed02c83253ad566373e32ee92385de9968499b",
+    "previous_result": {
+      "dataset": "NUDT-SIRST",
+      "method": "SCTransNet",
+      "labels": 50,
+      "status": "verified",
+      "values": {
+        "IoU": 69.63668887244017,
+        "nIoU": 70.24345416437336,
+        "F1": 82.10097631038307,
+        "Pd": 91.32275132275132,
+        "Fa": 94.42524737622364
+      },
+      "source": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet/metrics/summary.json",
+      "review": "训练日程待复核，不作已收敛比较",
+      "epochs": "500",
+      "schedule_status": "cap_without_confirmed_convergence"
+    },
+    "selection_reference_ours_IoU": 62.91692273311358,
+    "selection_rule": "User requested epoch125 for methods whose pre-replacement full-training IoU exceeded the current table Ours",
+    "test_based_display_selection": true
+  },
+  "test_based_display_selection": true,
+  "category": "IRSTD",
+  "venue": "IEEE TGRS",
+  "year": 2024,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet/checkpoints/epoch_0125.pt",
+  "expected_epoch": 125,
+  "config": "outputs/comparison_50shot_5support/full16/NUDT-SIRST/SCTransNet/config.json",
+  "metric_source_exists": false,
+  "weight_kind": "one_retained_task_checkpoint"
+}

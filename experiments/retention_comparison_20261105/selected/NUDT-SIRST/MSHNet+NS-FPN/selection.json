@@ -1,0 +1,28 @@
+{
+  "variant": "balanced",
+  "updates": 1000,
+  "validation": {
+    "updates": 1000,
+    "epoch": 100,
+    "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+    "images": 10,
+    "IoU_percent": 37.91540785498489,
+    "nIoU_percent": 51.05815037499764,
+    "F1_percent": 54.983570646221246,
+    "Pd_percent": 68.75,
+    "Fa_per_million": 274.658203125,
+    "pixel_FP_per_million": 274.658203125,
+    "FP_per_image": 0.5,
+    "tp": 251,
+    "fp": 180,
+    "fn": 231,
+    "pixels": 655360,
+    "targets": 16,
+    "predictions": 16,
+    "detected": 11,
+    "unmatched_pixels": 102
+  },
+  "official_test_labels_read": false,
+  "rule": "IoU, lower Fa, fewer updates",
+  "split_sha256": "f7f4b3beb3546ddb79dce777247f0c8fbfca3f9571472af9547de0e4702978a5"
+}

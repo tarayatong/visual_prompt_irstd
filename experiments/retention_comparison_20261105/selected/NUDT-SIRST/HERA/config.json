@@ -1,0 +1,36 @@
+{
+  "source_commit": "038c9a1fdcef41b21ea8fc8a49341caf0a165bf1",
+  "actual_annotation_budget": 5,
+  "allocated_annotation_budget": 50,
+  "support_shots": 5,
+  "backbone": "DINOv3 ViT-L/16",
+  "input_size": 400,
+  "target_gradient_updates": true,
+  "query_labels_for_adaptation": false,
+  "adaptation": "once on fixed support; native HLS/PGR/PAC; no changes between queries",
+  "upstream_logger_benchmark_alias": "lung",
+  "upstream_query_metrics": "discarded; dummy GT",
+  "adaptation_rng_seed": 0,
+  "restored_saved_adaptation": false,
+  "refine": "auto",
+  "selected_feat_ids": [
+    22
+  ],
+  "manifest_sha256": "8aa214bcfaf15ee46cdd13591c6ae8dfab144b8a4cde92198599e8dce7730dba",
+  "apply_refine": true,
+  "vote_stats": {
+    "soft_votes": 5.0,
+    "need_votes": 2.0,
+    "delta_avg": 0.020993018534305873,
+    "pos": 5,
+    "near": 0,
+    "neg": 0,
+    "deltas": [
+      0.031251460313797,
+      0.008146725594997406,
+      1.9198814205090287e-09,
+      0.026507027447223663,
+      0.03905987739562988
+    ]
+  }
+}

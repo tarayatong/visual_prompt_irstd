@@ -1,0 +1,27 @@
+{
+  "method": "HERA",
+  "dataset": "SIRST",
+  "category": "FSS",
+  "venue": "CVPR",
+  "year": 2026,
+  "labels": "5",
+  "epochs": "",
+  "values": {
+    "IoU": 3.6418934726663026,
+    "nIoU": 4.514972926662939,
+    "F1": 7.027840481565087,
+    "Pd": 56.88073394495413,
+    "Fa": 14742.327119349247
+  },
+  "status": "replication_unverified",
+  "origin": "preserved_existing_result",
+  "source": "outputs/comparison_50shot_5support/SIRST/HERA/metrics/summary.json",
+  "review": "单次设置参考，正式比较待协议对齐",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/SIRST/HERA",
+  "checkpoint": "outputs/comparison_50shot_5support/SIRST/HERA/checkpoints/support_adaptation.pt",
+  "expected_epoch": null,
+  "config": "outputs/comparison_50shot_5support/SIRST/HERA/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "support_adaptation_plus_frozen_backbone"
+}

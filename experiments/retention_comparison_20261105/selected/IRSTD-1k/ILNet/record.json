@@ -1,0 +1,28 @@
+{
+  "dataset": "IRSTD-1k",
+  "method": "ILNet",
+  "labels": 50,
+  "status": "verified",
+  "values": {
+    "IoU": 61.78248638295325,
+    "nIoU": 58.90055160292199,
+    "F1": 76.37722446261422,
+    "Pd": 87.87878787878788,
+    "Fa": 40.99376166044776
+  },
+  "source": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ILNet/metrics/summary.json",
+  "review": "训练日程待复核，不作已收敛比较",
+  "epochs": "500",
+  "schedule_status": "cap_without_confirmed_convergence",
+  "category": "IRSTD",
+  "venue": "IEEE TAES",
+  "year": 2025,
+  "origin": "preserved_existing_result",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ILNet",
+  "checkpoint": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ILNet/checkpoints/epoch_0500.pt",
+  "expected_epoch": 500,
+  "config": "outputs/comparison_50shot_5support/full16/IRSTD-1k/ILNet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

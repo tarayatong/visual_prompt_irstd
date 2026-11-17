@@ -1,0 +1,53 @@
+\begin{table*}[!t]
+\centering
+\caption{Comparison on SIRST, IRSTD-1k, and NUDT-SIRST. Bold, underlined, and italic values denote the best, second-best, and third-best results, respectively. Degenerate results marked $^{\dagger}$ are excluded from ranking.}
+\label{tab:comparison_three_datasets}
+\begingroup
+\renewcommand{\arraystretch}{1.15}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{ll|rrrrr|rrrrr|rrrrr}
+\hline
+\multirow{2}{*}{Method} & \multirow{2}{*}{Venue} & \multicolumn{5}{c|}{SIRST} & \multicolumn{5}{c|}{IRSTD-1k} & \multicolumn{5}{c}{NUDT-SIRST} \\
+\cline{3-7}\cline{8-12}\cline{13-17}
+ & & IoU $\uparrow$ & nIoU $\uparrow$ & F1 $\uparrow$ & Pd $\uparrow$ & Fa $\downarrow$ & IoU $\uparrow$ & nIoU $\uparrow$ & F1 $\uparrow$ & Pd $\uparrow$ & Fa $\downarrow$ & IoU $\uparrow$ & nIoU $\uparrow$ & F1 $\uparrow$ & Pd $\uparrow$ & Fa $\downarrow$ \\
+\hline
+\multicolumn{17}{l}{\textbf{Few Shot Segmentation}} \\
+\hline
+% Matcher & ICLR'24 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+% PI-CLIP & CVPR'24 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ABCDFSS & CVPR'24 & 14.65$^{*}$ & 19.14$^{*}$ & 25.56$^{*}$ & 69.72$^{*}$ & 3031.34$^{*}$ & 7.07 & 14.39 & 13.20 & 37.04 & 2430.47 & 9.36$^{*}$ & 21.05$^{*}$ & 17.13$^{*}$ & 78.52$^{*}$ & 4700.07$^{*}$ \\
+IFA & CVPR'24 & 37.68 & 38.11 & 54.74 & 86.24 & 423.74 & 19.55$^{*}$ & 23.32$^{*}$ & 32.70$^{*}$ & \textit{87.54}$^{*}$ & 501.64$^{*}$ & 29.20 & 26.87 & 45.20 & 75.34 & 720.54 \\
+% DSV-LFS & CVPR'25 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+TVGTANet & ACM MM'25 & 21.87 & 25.43 & 35.89 & 77.06 & 1823.78 & 11.62 & 15.07 & 20.82 & 36.03 & 1252.91 & 20.73$^{*}$ & 23.74$^{*}$ & 34.34$^{*}$ & 78.31$^{*}$ & 1463.28$^{*}$ \\
+SANSA & NeurIPS'25 & 62.08 & \underline{76.13} & 76.61 & \textbf{99.08} & 227.14 & \textbf{62.48} & \textbf{61.79} & \textbf{76.91} & \underline{92.26} & 54.24 & \underline{65.96} & \textbf{74.40} & \underline{79.49} & \textbf{98.20} & 214.86 \\
+PAHNet & ICCV'25 & 10.31 & 7.75 & 18.69 & 24.77 & 81.57 & 6.24 & 1.40 & 11.74 & 1.68 & \textbf{15.39} & 17.72 & 11.79 & 30.10 & 28.15 & 206.91 \\
+MPA & CVPR'26 & 26.67 & 28.17 & 42.11 & 85.32 & 1071.71 & 1.52 & 4.37 & 2.99 & 34.34 & 11805.77 & 24.79 & 23.44 & 39.73 & 77.35 & 876.09 \\
+HERA & CVPR'26 & 3.64 & 4.51 & 7.03 & 56.88 & 14742.33 & -- & -- & -- & -- & -- & 1.66 & 5.76 & 3.26 & 26.67 & 19676.90 \\
+\hline
+\multicolumn{17}{l}{\textbf{IRSTD}} \\
+\hline
+ISNet & CVPR'22 & 56.66 & 66.13 & 72.33 & \underline{98.17} & 293.18 & 5.06$^{*}$ & 6.66$^{*}$ & 9.63$^{*}$ & 76.77$^{*}$ & 4678.91$^{*}$ & 36.52 & 42.19 & 53.51 & 93.54 & 892.41 \\
+DNANet & TIP'23 & 57.35 & 70.40 & 72.90 & 94.50 & 165.71 & 58.87 & 50.56 & 74.11 & 81.48 & 70.98 & 62.20 & \textit{65.86} & 76.70 & 88.25 & \textit{107.68} \\
+MSHNet & CVPR'24 & 60.08 & 73.36 & 75.06 & \textit{97.25} & 212.46 & 55.52 & 53.89 & 71.40 & 83.84 & 67.01 & 57.61 & 64.73 & 73.10 & 87.62 & 136.13 \\
+SCTransNet & TGRS'24 & 59.03 & 72.09 & 74.24 & 91.74 & 160.24 & 56.35 & 45.13 & 72.08 & 71.38 & 89.83 & \textit{63.72} & 64.97 & \textit{77.84} & 90.69 & 134.99 \\
+RPCANet & WACV'24 & 46.31 & 55.40 & 63.30 & 90.83 & 205.81 & 43.41 & 41.32 & 60.54 & 77.10 & 88.63 & 17.37$^{*}$ & 51.05$^{*}$ & 29.59$^{*}$ & 90.37$^{*}$ & 2268.23$^{*}$ \\
+ILNet & TAES'25 & \textit{63.21} & \textbf{77.56} & \textit{77.46} & \textbf{99.08} & 203.93 & 48.76$^{\ddagger}$ & 38.72$^{\ddagger}$ & 65.56$^{\ddagger}$ & 69.02$^{\ddagger}$ & \underline{16.23}$^{\ddagger}$ & 56.57 & 57.58 & 72.26 & 85.50 & \textbf{68.27} \\
+HDNet & TGRS'25 & 62.28 & 68.61 & 76.75 & 92.66 & 161.61 & \textit{59.29} & \textit{55.96} & \textit{74.45} & 86.87 & 73.35 & 61.61$^{*}$ & 62.97$^{*}$ & 76.25$^{*}$ & 89.21$^{*}$ & 181.91$^{*}$ \\
+% PConv+SD & AAAI'25 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+SAM-SPL & TGRS'25 & 54.25 & 60.11 & 70.34 & 79.82 & \textbf{64.68} & 30.82 & 33.01 & 47.12 & 59.93 & 41.37 & 46.80 & 49.52 & 63.76 & 71.53 & 157.02 \\
+% SFDTNet & TGRS'25 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+% IOVarNet & TGRS'25 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+MLP-Net & TGRS'25 & 21.98 & 25.29 & 36.04 & \underline{98.17} & 1995.80 & 6.83 & 9.88 & 12.79 & 80.81 & 3318.12 & 16.86 & 23.66 & 28.85 & \underline{95.77} & 2953.29 \\
+MSHNet+NS-FPN & CVPR'26 & 58.35 & 64.60 & 73.70 & 95.41 & 214.68 & 53.17 & 51.21 & 69.42 & 80.81 & 122.26 & 53.00$^{*}$ & 54.65$^{*}$ & 69.28$^{*}$ & 86.03$^{*}$ & 212.57$^{*}$ \\
+IRPruneDet & AAAI'24 & 25.55$^{*}$ & 44.00$^{*}$ & 40.70$^{*}$ & 93.58$^{*}$ & 942.52$^{*}$ & 21.73$^{*}$ & 20.74$^{*}$ & 35.70$^{*}$ & 85.19$^{*}$ & 825.23$^{*}$ & 12.72$^{*}$ & 34.97$^{*}$ & 22.58$^{*}$ & 87.94$^{*}$ & 2918.82$^{*}$ \\
+IR-SAM2 & Remote Sensing'26 & 47.51$^{*}$ & 56.73$^{*}$ & 64.42$^{*}$ & 79.82$^{*}$ & \textit{80.04}$^{*}$ & 40.25$^{*}$ & 40.59$^{*}$ & 57.40$^{*}$ & 70.71$^{*}$ & \textit{32.74}$^{*}$ & 46.59$^{*}$ & 55.92$^{*}$ & 63.57$^{*}$ & 80.11$^{*}$ & 207.37$^{*}$ \\
+IRSAM & ECCV'24 & 0.00$^{*\dagger}$ & 0.00$^{*\dagger}$ & 0.00$^{*\dagger}$ & 0.00$^{*\dagger}$ & 0.00$^{*\dagger}$ & 45.85$^{*}$ & 51.05$^{*}$ & 62.88$^{*}$ & 77.78$^{*}$ & 36.36$^{*}$ & 56.28$^{*}$ & 60.30$^{*}$ & 72.03$^{*}$ & 86.14$^{*}$ & \underline{75.79}$^{*}$ \\
+SAMamba & Information Fusion'25 & \underline{63.89}$^{*}$ & 66.67$^{*}$ & \underline{77.97}$^{*}$ & 94.50$^{*}$ & \underline{77.31}$^{*}$ & 47.25$^{*}$ & 43.48$^{*}$ & 64.18$^{*}$ & 78.79$^{*}$ & 62.57$^{*}$ & 61.12$^{*}$ & 64.53$^{*}$ & 75.87$^{*}$ & \textit{93.86}$^{*}$ & 131.49$^{*}$ \\
+\hline
+Ours &  & \textbf{68.64} & \textit{75.39} & \textbf{81.41} & 93.58 & 108.55 & \underline{62.30} & \underline{61.57} & \underline{76.77} & \textbf{93.27} & 67.92 & \textbf{69.74} & \underline{72.31} & \textbf{82.17} & 91.85 & 120.09 \\
+\hline
+\end{tabular}}
+\endgroup
+\par\smallskip
+\noindent\parbox{\linewidth}{\raggedright\footnotesize $^{*}$: Task-adapted or repeated settings; training budgets differ across methods. IRPruneDet, IRSAM, IR-SAM2, and SAMamba use 50 training images per dataset, seed111, and epoch120 evaluation. IRPruneDet reuses the released compact topology with reset weights; IRSAM uses the current public implementation; SAMamba uses 256-pixel inputs and a PyTorch reference scan backend. $^{\ddagger}$: ILNet on IRSTD-1k is evaluated at epoch120 using an archived seed111 train50 rerun snapshot with the original500-epoch cosine horizon; SIRST/NUDT-SIRST retain epoch500/125. $^{\dagger}$: IRSAM predicts empty masks on SIRST; Fa=0 does not indicate better detection. IoU, nIoU, F1, and Pd are percentages; Fa is false-positive pixels per million pixels. --: No valid result.\par}
+\end{table*}

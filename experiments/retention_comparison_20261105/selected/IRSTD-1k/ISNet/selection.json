@@ -1,0 +1,29 @@
+{
+  "variant": "balanced",
+  "edge_BCE_weight": 1.0,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "updates": 1000,
+  "validation": {
+    "updates": 1000,
+    "epoch": 100,
+    "protocol_version": "comparison_v2_centroid_lt3_full_image_pixel_fp_fa",
+    "images": 10,
+    "IoU_percent": 1.4611441701525953,
+    "nIoU_percent": 2.579896232489285,
+    "F1_percent": 2.880204401602694,
+    "Pd_percent": 0.0,
+    "Fa_per_million": 19123.84033203125,
+    "pixel_FP_per_million": 19123.84033203125,
+    "FP_per_image": 22.5,
+    "tp": 744,
+    "fp": 50132,
+    "fn": 43,
+    "pixels": 2621440,
+    "targets": 17,
+    "predictions": 225,
+    "detected": 0,
+    "unmatched_pixels": 50876
+  },
+  "official_test_labels_read_for_selection": false
+}

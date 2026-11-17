@@ -1,0 +1,32 @@
+{
+  "method": "PAHNet",
+  "dataset": "SIRST",
+  "category": "FSS",
+  "venue": "ICCV",
+  "year": 2025,
+  "labels": 50,
+  "epochs": 120,
+  "values": {
+    "IoU": 10.306334371754932,
+    "nIoU": 7.75422619698716,
+    "F1": 18.68674982348788,
+    "Pd": 24.770642201834864,
+    "Fa": 81.57283344772871
+  },
+  "status": "verified",
+  "origin": "new_method_epoch120",
+  "source": "outputs/comparison_recent_a_20261104/SIRST/PAHNet/epoch_0120/metrics/summary.json",
+  "metric_counts_verified": true,
+  "quality_review": null,
+  "training_horizon": 120,
+  "reused_existing_epoch120": false,
+  "variant": "PAHNet_HDM_Pascal_split0_train50",
+  "deviations": "author full Pascal split0 5shot source pretraining; target50 novel-class adaptation, not native source benchmark training; batch1 and257 input vs4 and473; all target pixels map to background for frozen Pascal base learner; original prototype predictor/fusion/native three loss terms retained; no test-based adaptation",
+  "table_adaptation_star": false,
+  "run_directory": "outputs/comparison_recent_a_20261104/SIRST/PAHNet",
+  "checkpoint": "outputs/comparison_recent_a_20261104/SIRST/PAHNet/checkpoints/epoch_0120.pt",
+  "expected_epoch": 120,
+  "config": "outputs/comparison_recent_a_20261104/SIRST/PAHNet/config.json",
+  "metric_source_exists": true,
+  "weight_kind": "one_retained_task_checkpoint"
+}

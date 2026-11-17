@@ -1,0 +1,21 @@
+{
+  "method": "MPA",
+  "source_commit": "21395a20540449a58c8d6501774740def50d70d7",
+  "allocated_annotation_budget": 50,
+  "actual_annotation_budget": 5,
+  "support_shots": 5,
+  "input_size": 400,
+  "epochs": 500,
+  "optimizer": "native SGD",
+  "lr": 0.001,
+  "momentum": 0.9,
+  "weight_decay": 0.0005,
+  "batch_size": 1,
+  "refinement": true,
+  "initialization_sha256": "1235e2d602f14e4634811a03c172e2e04a04fd86c82b37a2a9ed75f109f45524",
+  "native_components": "6 support-derived augmentations; parallel/chain/self weighted losses;6phases; frozen layer0/1 and BN",
+  "budget_adaptation": "one pass over fixed5 supports per optimizer step; hard500 passes replaces author48000 episodes; batch1 replaces4; snapshot25 replaces1200",
+  "phase_selection": "native counter logic on rolling training-augmentation foreground IoU, replacing forbidden test-mIoU",
+  "test_selection": "final fixed support pass; full test once; no test-based best checkpoint",
+  "manifest_sha256": "456cee6fa79ebccb486a34e1a5180477cfab0b966da523b22aa05ac46ecf6a2a"
+}

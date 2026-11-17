@@ -1,91 +1,10 @@
-# Semantic Visual Prompting for Infrared Small Targets
+# 红外稀疏小目标少样本分割
 
-This repository contains a self-contained training-free visual-prompt pipeline
-for infrared small-target localization and mask extraction.
+CoRe-IR 使用 SAM2 Tiny、紧凑语义记忆（CSM）和径向对比细化（RCR）。当前稿件的实验协议、原始指标、配置和权重由[论文实验总档](docs/core_ir_experiments.md)索引。
 
-The active method combines:
+- [三种子固定支持复评](scripts/run_core_ir_final_three_seeds.py)
+- [图 3 定性对比复现](scripts/render_core_ir_final_qualitative.py)
+- [补充实验与全监督训练协议](docs/core_ir_followup_20261117.txt)
+- [安装与数据准备](docs/reproduction_setup.md)
 
-```text
-5-shot support targets
--> receptive-field-aware target tokens
--> support-derived high-frequency and bright-flat negative directions
--> negative-subspace-adjusted semantic score token
--> multi-layer MobileSAM feature similarity
--> overlapping local-window fusion
--> similarity-guided local-contrast mask extraction
-```
-
-The method code is implemented under `visual_prompt/`. It does not import or
-modify a separate PR-MaGIC, Personalize-SAM, SAM-SPL, or MobileSAM source
-checkout. The bundled MobileSAM backend retains TinyViT, prompt encoding, mask
-decoding, and predictor inference so decoder comparisons remain reproducible.
-License notices remain beside the code.
-
-## External Assets
-
-Weights and datasets are intentionally not stored in Git. Download and directory
-instructions are in `docs/reproduction_setup.md`.
-
-## Environment
-
-```powershell
-pip install -r requirements.txt
-```
-
-The default backbone checkpoint is:
-
-```text
-checkpoints/mobile_sam.pt
-```
-
-Expected SHA-256:
-
-```text
-6DBB90523A35330FEDD7F1D3DFC66F995213D81B29A5CA8108DBCDD4E37D6C2F
-```
-
-## Run Experiments
-
-Run commands from the repository root:
-
-```powershell
-cd D:\workspace\code\visual_prompt
-conda run -n sam python -m scripts.run_experiment `
-  --config experiments/configs/ablation/overall/03_full.yaml
-```
-
-Inspect a resolved command without running inference:
-
-```powershell
-conda run -n sam python -m scripts.run_experiment `
-  --config experiments/configs/ablation/overall/03_full.yaml `
-  --dry-run
-```
-
-## Minimal Repository Layout
-
-```text
-visual_prompt/
-  backbones/       local MobileSAM runtime
-  core/            semantic directions, embedding utilities, and metrics
-  data/            dataset adapters
-  pipelines/       reusable semantic visual-prompt pipeline
-  evaluation/      unified numerical evaluation and ablations
-
-experiments/configs/  canonical experiment settings
-scripts/              experiment and output-management entry points
-docs/                 public download and reproduction instructions
-```
-
-The following paths exist only after local setup and are ignored by Git:
-
-```text
-dataset/              IRSTD-1k images, labels, and split files
-checkpoints/          downloaded `.pt`/`.pth` model weights
-outputs/              generated metrics, metadata, and figures
-visual_prompt/visualization/  local paper/test plotting tools
-```
-
-The public minimal-reproduction guide is `docs/reproduction_setup.md`. Local
-ablation notes, generated results, and paper/test plotting code are excluded by
-`.gitignore`.
+数据集、模型权重、预测掩码和运行日志保存在本地。三个基准数据集的划分与固定支持清单由准备脚本写入 `outputs/comparison_50shot_5support/<数据集>/protocol/`。[论文证据索引](experiments/evidence/core_ir_paper_index.json)记录图表对应的本地产物。
